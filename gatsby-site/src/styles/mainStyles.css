@@ -2,6 +2,15 @@ body {
     font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu !important;
     position: relative;
     overflow-x: hidden;
+    outline: red solid 2px;
+}
+
+.debug {
+  outline: blue solid 2px;
+}
+
+.profileImg {
+  height: 3rem
 }
 
 .modal-body {
