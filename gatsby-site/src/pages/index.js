@@ -1,23 +1,27 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { Link } from "gatsby"
+import React, { useEffect } from "react"
+import Layout from "../components/Layout"
 
-import "../styles/bootstrap.min.css"
-import "../styles/bootstrap.min.css"
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/mainStyles.css"
+
+function getCurrentDay() {
+  const d = new Date();
+  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+  var day = days[d.getDay()].toUpperCase()
+  var month = months[d.getMonth()].toUpperCase()
+  var dayOfMonth = d.getDate();
+  // Put them together
+  return day + ", " + month + " " + dayOfMonth;
+}
 
 export default function Home() {
   return (
     <>
-      <Helmet>
-        <meta charset="UTF-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <title>Simon Says Hello</title>
-      </Helmet>
-      <div>
-        <h1>INSERT PAGE HERE LOL</h1>
-      </div>
+      <Layout dateString={getCurrentDay()} pageTitle="Today">
+        <h1>Hello World</h1>
+      </Layout>
     </>
   )
 }
