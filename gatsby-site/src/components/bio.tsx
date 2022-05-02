@@ -32,7 +32,7 @@ const Bio: React.FC = () => (
         <div>
           <h1>{description}</h1>
           <p>
-            By Jeff Rafter
+            By Simon Schueller
             <br />
             <a href={social.twitter}>Twitter</a>
           </p>

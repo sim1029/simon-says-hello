@@ -1,8 +1,40 @@
-import * as React from 'react'
+import React from 'react'
+import {graphql} from 'gatsby'
 
-const Blogs = () => { 
-  <main>
-    <title>Blogs</title>
-    <h1>Blogs Page!</h1>
-  </main>
- }
+import Layout from '../components/layout'
+import Head from '../components/head'
+
+interface BlogsProps {
+  readonly data: PageQueryData
+}
+
+const Blogs: React.FC<BlogsProps> = ({data}) => {
+  const siteTitle = data.site.siteMetadata.title
+
+  return (
+    <Layout title={siteTitle}>
+      <Head title="All tags" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+      <article>Simon Schueller projects</article>
+    </Layout>
+  )
+}
+
+interface PageQueryData {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`
+
+export default Blogs
