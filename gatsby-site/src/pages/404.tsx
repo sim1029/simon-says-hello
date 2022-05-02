@@ -1,16 +1,42 @@
-// Step 1: Import React
-import * as React from 'react'
+import React from 'react'
+import {graphql} from 'gatsby'
 
-// Step 2: Define your component
-const NotFoundPage = () => {
-  return (
-    <main>
-      <title>Custom 404</title>
-      <h1>404 Page not found playa!</h1>
-      <p>I'm trying out a custom 404 page for you geeks.</p>
-    </main>
-  )
+import Layout from '../components/layout'
+import Head from '../components/head'
+
+interface Props {
+  readonly data: PageQueryData
 }
 
-// Step 3: Export your component
-export default NotFoundPage
+export default class NotFoundPage extends React.Component<Props> {
+  render() {
+    const {data} = this.props
+    const siteTitle = data.site.siteMetadata.title
+
+    return (
+      <Layout title={siteTitle}>
+        <Head title="404: Not Found" />
+        <h1>Not Found</h1>
+        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </Layout>
+    )
+  }
+}
+
+interface PageQueryData {
+  site: {
+    siteMetadata: {
+      title: string
+    }
+  }
+}
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

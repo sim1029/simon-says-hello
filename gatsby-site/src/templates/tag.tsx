@@ -3,21 +3,29 @@ import {Link, graphql} from 'gatsby'
 
 import Layout from '../components/layout'
 import Head from '../components/head'
-import Bio from '../components/bio'
 
-interface IndexProps {
+interface TagProps {
   readonly data: PageQueryData
+  readonly pageContext: {
+    tag: string
+  }
 }
 
-const Index: React.FC<IndexProps> = ({data}) => {
+const TagTemplate: React.FC<TagProps> = ({data, pageContext}) => {
+  const {tag} = pageContext
   const siteTitle = data.site.siteMetadata.title
   const posts = data.allMarkdownRemark.edges
 
   return (
     <Layout title={siteTitle}>
-      <Head title="All posts" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      <Bio />
+      <Head
+        title={`Posts tagged "${tag}"`}
+        keywords={[`blog`, `gatsby`, `javascript`, `react`, tag]}
+      />
       <article>
+        <header>
+          <h1>Posts tagged {tag}</h1>
+        </header>
         <div className={`page-content`}>
           {posts.map(({node}) => {
             const title = node.frontmatter.title || node.fields.slug
@@ -44,6 +52,7 @@ interface PageQueryData {
     }
   }
   allMarkdownRemark: {
+    totalCount: number
     edges: {
       node: {
         excerpt: string
@@ -60,24 +69,22 @@ interface PageQueryData {
 }
 
 export const pageQuery = graphql`
-  query {
+  query TagPage($tag: String) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(
-      filter: {frontmatter: {published: {ne: false}}}
-      sort: {fields: [frontmatter___date], order: DESC}
-    ) {
+    allMarkdownRemark(limit: 1000, filter: {frontmatter: {tags: {in: [$tag]}}}) {
+      totalCount
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 2500)
           fields {
             slug
           }
           frontmatter {
-            date(formatString: "MMMM DD, YYYY")
+            date
             title
           }
         }
@@ -86,4 +93,4 @@ export const pageQuery = graphql`
   }
 `
 
-export default Index
+export default TagTemplate
