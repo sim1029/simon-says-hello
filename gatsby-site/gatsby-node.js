@@ -37,7 +37,7 @@ exports.createPages = ({graphql, actions}) => {
 
       actions.createPage({
         path: blog.node.fields.slug,
-        component: postTemplate,
+        component: blogTemplate,
         context: {
           slug: blog.node.fields.slug,
           previous,
