@@ -1,8 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import { Link } from 'gatsby'
-import logo from '../img/logo.svg'
-import logoDark from '../img/logo-dark.svg'
+import logo from '../img/logo.png'
 import ToggleSlider from './ToggleSlider'
 import githubLogo from '../img/social/github-icon.svg'
 import githubLogoDark from '../img/social/github-icon-dark.svg'
@@ -15,12 +14,14 @@ const navPages = [
 
 const navLinks = navPages.map(([title, url]) => (
   <li key={title}>
-    <Link to={url} className='text-3xl lg:text-xl'>
+    <Link
+      to={url}
+      className='text-3xl hover:underline decoration-blue dark:decoration-red decoration-2 underline-offset-4 lg:text-xl'
+    >
       {title}
     </Link>
   </li>
 ))
-
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false)
@@ -30,7 +31,6 @@ const Navbar = () => {
     if (theme === 'dark') {
       localStorage.theme = 'light'
       setTheme('light')
-      console.log(document.documentElement)
       document.documentElement.classList.remove('dark')
     } else {
       localStorage.theme = 'dark'
@@ -57,29 +57,30 @@ const Navbar = () => {
   ))
 
   return (
-    <div className='flex justify-between px-8 lg:justify-around items-center py-8 lg:py-10 bg-slate-200 dark:bg-gray-800 dark:text-slate-200 text-gray-800'>
-      <Link to='/'>
-        <h1 className='font-bold'>SimonSaysHello</h1>
+    <div className='flex items-center justify-between bg-slate-200 px-8 py-8 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200 lg:justify-around lg:py-10'>
+      <Link to='/' className='flex items-center space-x-4'>
+        <img src={logo} alt='logo' className='h-10 w-10' />
+        <h1 className='text-xl font-bold'>Simon-Says-Hello</h1>
       </Link>
       <nav>
         <section className='flex lg:hidden'>
           <div
-            className='space-y-2 cursor-pointer'
+            className='cursor-pointer space-y-2'
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
-            <span className='block h-1 w-10 dark:bg-slate-200 bg-gray-800'></span>
-            <span className='block h-1 w-10 dark:bg-slate-200 bg-gray-800'></span>
-            <span className='block h-1 w-10 dark:bg-slate-200 bg-gray-800'></span>
+            <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
+            <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
+            <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
           </div>
           <div
             className={
               isNavOpen
-                ? 'fixed w-screen h-screen top-0 left-0 z-10 flex flex-col items-center justify-evenly bg-slate-200 dark:bg-gray-800'
+                ? 'fixed top-0 left-0 z-10 flex h-screen w-screen flex-col items-center justify-evenly bg-slate-200 dark:bg-gray-800'
                 : 'hidden'
             }
           >
             <div
-              className='absolute top-0 right-0 px-8 py-8 cursor-pointer'
+              className='absolute top-0 right-0 cursor-pointer px-8 py-8'
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
               <svg
@@ -98,18 +99,18 @@ const Navbar = () => {
             <div className='absolute top-0 left-0 px-8 py-8'>
               <ToggleSlider onClick={toggleDarkMode}></ToggleSlider>
             </div>
-            <ul className='flex flex-col justify-between min-h-[250px] mx-10'>
+            <ul className='mx-10 flex min-h-[250px] flex-col justify-between'>
               {navLinks}
             </ul>
           </div>
         </section>
-        <ul className='hidden lg:flex sm:space-x-8 lg:space-x-16'>
-          {navLinks}
-        </ul>
+        <div className='hidden space-x-8 lg:flex'>
+          <ul className='hidden sm:space-x-8 lg:flex lg:space-x-16'>
+            {navLinks}
+          </ul>
+          <ToggleSlider onClick={toggleDarkMode}></ToggleSlider>
+        </div>
       </nav>
-      <div className='hidden lg:flex'>
-        <ToggleSlider onClick={toggleDarkMode}></ToggleSlider>
-      </div>
     </div>
   )
 }
