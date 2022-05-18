@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './Footer'
 import Navbar from './Navbar'
@@ -8,6 +8,7 @@ import { withPrefix } from 'gatsby'
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata()
+  const [theme, setTheme] = useState(null)
 
   useEffect(() => {
     if (
@@ -15,11 +16,25 @@ const TemplateWrapper = ({ children }) => {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
+      setTheme('dark')
       document.documentElement.classList.add('dark')
     } else {
+      setTheme('light')
       document.documentElement.classList.remove('dark')
     }
   }, [])
+
+  const toggleDarkMode = () => {
+    if (theme === 'dark') {
+      localStorage.theme = 'light'
+      setTheme('light')
+      document.documentElement.classList.remove('dark')
+    } else {
+      localStorage.theme = 'dark'
+      setTheme('dark')
+      document.documentElement.classList.add('dark')
+    }
+  }
 
   return (
     <div className='bg-slate-100 dark:bg-gray-800'>
@@ -61,11 +76,11 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
-      <div className='bg-slate-200 duration-300 ease-linear dark:bg-gray-800'>
+      <Navbar themeToggle={toggleDarkMode} />
+      <div>
         {children}
       </div>
-      <Footer className='bg-slate-200 dark:bg-gray-800' />
+      <Footer theme={theme} />
     </div>
   )
 }

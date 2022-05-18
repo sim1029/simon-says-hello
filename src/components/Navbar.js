@@ -3,8 +3,6 @@ import { useState } from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.png'
 import ToggleSlider from './ToggleSlider'
-import githubLogo from '../img/social/github-icon.svg'
-import githubLogoDark from '../img/social/github-icon-dark.svg'
 
 const navPages = [
   ['Projects', '/projects'],
@@ -23,38 +21,8 @@ const navLinks = navPages.map(([title, url]) => (
   </li>
 ))
 
-const Navbar = () => {
+const Navbar = ({ themeToggle }) => {
   const [isNavOpen, setIsNavOpen] = useState(false)
-  const [theme, setTheme] = useState(localStorage.theme)
-
-  const toggleDarkMode = () => {
-    if (theme === 'dark') {
-      localStorage.theme = 'light'
-      setTheme('light')
-      document.documentElement.classList.remove('dark')
-    } else {
-      localStorage.theme = 'dark'
-      setTheme('dark')
-      document.documentElement.classList.add('dark')
-    }
-  }
-
-  const github = theme === 'dark' ? githubLogoDark : githubLogo
-
-  const socialsLinks = [
-    { alt: 'GitHub', src: github, url: 'https://github.com/sim1029' },
-    { alt: 'GitHub1', src: github, url: 'https://github.com/sim1029' },
-    { alt: 'GitHub2', src: github, url: 'https://github.com/sim1029' },
-    { alt: 'GitHub3', src: github, url: 'https://github.com/sim1029' },
-  ]
-
-  const socials = socialsLinks.map(({ alt, src, url }) => (
-    <li key={alt}>
-      <a href={url}>
-        <img alt={alt} src={src} className='w-10 md:w-16 lg:w-6' />
-      </a>
-    </li>
-  ))
 
   return (
     <div className='flex items-center justify-between bg-slate-200 px-8 py-8 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200 lg:justify-around lg:py-10'>
@@ -96,8 +64,11 @@ const Navbar = () => {
                 <line x1='6' y1='6' x2='18' y2='18' />
               </svg>
             </div>
-            <div className='absolute top-0 left-0 px-8 py-8'>
-              <ToggleSlider onClick={toggleDarkMode}></ToggleSlider>
+            <div className='absolute top-0 left-0 flex px-8 py-8 space-x-8'>
+              <ToggleSlider onClick={themeToggle}></ToggleSlider>
+              <Link to='/'>
+                <img src={logo} alt='logo' className='h-10 w-10' />
+              </Link>
             </div>
             <ul className='mx-10 flex min-h-[250px] flex-col justify-between'>
               {navLinks}
@@ -108,7 +79,7 @@ const Navbar = () => {
           <ul className='hidden sm:space-x-8 lg:flex lg:space-x-16'>
             {navLinks}
           </ul>
-          <ToggleSlider onClick={toggleDarkMode}></ToggleSlider>
+          <ToggleSlider onClick={themeToggle}></ToggleSlider>
         </div>
       </nav>
     </div>
