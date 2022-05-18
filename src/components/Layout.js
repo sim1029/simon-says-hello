@@ -62,7 +62,9 @@ const TemplateWrapper = ({ children }) => {
         />
       </Helmet>
       <Navbar />
-      <div className='bg-slate-200 dark:bg-gray-800'>{children}</div>
+      <div className='bg-slate-200 duration-300 ease-linear dark:bg-gray-800'>
+        {children}
+      </div>
       <Footer className='bg-slate-200 dark:bg-gray-800' />
     </div>
   )
