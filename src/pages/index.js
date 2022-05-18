@@ -6,11 +6,8 @@ const Index = () => {
   return (
     <Layout>
       <section>
-        <div>
+        <div className="h-screen flex justify-center items-center">
           <h1>Splash Page!</h1>
-          <button type="button" className="btn btn-primary">
-            Primary
-          </button>
         </div>
       </section>
     </Layout>
