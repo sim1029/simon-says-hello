@@ -5,11 +5,11 @@ backend:
   # name: git-gateway
   # branch: master
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
 
 local_backend: true
 media_folder: static/img
@@ -17,22 +17,264 @@ public_folder: /img
 publish_mode: editorial_workflow
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "src/pages/blog"
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'static/_blogs'
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "blog-post",
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'blog-post',
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
-      - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Featured Post', name: 'featuredpost', widget: 'boolean' }
+      - { label: 'Featured Image', name: 'featuredimage', widget: image }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+
+  - name: 'skills'
+    label: 'Skills'
+    label_singular: 'Skill'
+    folder: 'static/_skills'
+    slug: '{{slug}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'skill',
+        }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - {
+          label: 'First Used',
+          name: 'yoe',
+          widget: 'datetime',
+          default: '',
+          time_format: false,
+          date_format: 'MM.YYYY',
+        }
+      - {
+          label: 'Proficiency',
+          name: 'proficiency',
+          widget: 'number',
+          min: 0,
+          max: 5,
+          step: 0.5,
+          value_type: 'float',
+        }
+      - {
+          label: 'Linked Projects',
+          name: 'linkedprojects',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Project',
+              name: 'linkedproject',
+              widget: 'relation',
+              collection: 'projects',
+              value_field: 'title',
+              search_fields: ['title'],
+            },
+        }
+      - {
+          label: 'Linked Organizations',
+          name: 'linkedorgs',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Organization',
+              name: 'linkedorg',
+              widget: 'relation',
+              collection: 'organizations',
+              value_field: 'name',
+              search_fields: ['name'],
+            },
+        }
+      - {
+          label: 'Linked Skills',
+          name: 'linkedskills',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Skill',
+              name: 'linkedskill',
+              widget: 'relation',
+              collection: 'skills',
+              value_field: 'name',
+              search_fields: ['name', 'linkedskills.*.linkedskill'],
+            },
+        }
+
+  - name: 'projects'
+    label: 'Projects'
+    label_singular: 'Project'
+    folder: 'static/_projects'
+    slug: '{{slug}}'
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    editor:
+      preview: false
+    create: true
+    fields: 
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'project',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Status', name: 'statue', widget: 'select', options: ['in progress', 'completed', 'abandoned']}
+      - { label: 'Featured Project', name: 'featuredproject', widget: 'boolean', required: false }
+      - {
+          label: 'Start Date',
+          name: 'startdate',
+          widget: 'datetime',
+          default: '',
+          time_format: false,
+          date_format: 'MM.DD.YYYY',
+        }
+      - {
+          label: 'End Date',
+          name: 'enddate',
+          widget: 'datetime',
+          default: '',
+          time_format: false,
+          date_format: 'MM.DD.YYYY',
+          required: false
+        }
+      - { 
+          label: 'Project Journal', 
+          name: 'projectjournal', 
+          widget: 'file',
+        }
+      - { label: 'Repository URL', name: 'repository', widget: 'string', required: false }
+      - {
+          label: 'Screenshots',
+          name: 'screenshots',
+          widget: 'list',
+          field: 
+            { 
+              label: 'Screenshot', 
+              name: 'screenshot', 
+              widget: 'image',
+            }
+        }
+      - { label: 'Demo URL', name: 'demo', widget: 'string', required: false }
+      - {
+          label: 'Linked Organizations',
+          name: 'linkedorgs',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Organization',
+              name: 'linkedorg',
+              widget: 'relation',
+              collection: 'organizations',
+              value_field: 'name',
+              search_fields: ['name'],
+            },
+        }
+      - {
+          label: 'Linked Skills',
+          name: 'linkedskills',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Skill',
+              name: 'linkedskill',
+              widget: 'relation',
+              collection: 'skills',
+              value_field: 'name',
+              search_fields: ['name', 'linkedskills.*.linkedskill'],
+            },
+        }
+
+  - name: 'organizations'
+    label: 'Organizations'
+    label_singular: 'Organization'
+    folder: 'static/_organizations'
+    slug: '{{slug}}'
+    identifier_field: name
+    create: true
+    editor:
+      preview: false
+    fields: 
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'organization',
+        }
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Current Organization', name: 'currentorg', widget: 'boolean', required: false }
+      - {
+          label: 'Start Date',
+          name: 'startdate',
+          widget: 'datetime',
+          default: '',
+          time_format: false,
+          date_format: 'MM.DD.YYYY',
+        }
+      - {
+          label: 'End Date',
+          name: 'enddate',
+          widget: 'datetime',
+          default: '',
+          time_format: false,
+          date_format: 'MM.DD.YYYY',
+          required: false
+        }
+      - { label: 'Role', name: 'role', widget: 'string' }
+      - { label: 'Role Description', name: 'roledescription', widget: 'text' } 
+      - { 
+          label: 'Accomplishments',
+          name: 'accomplishments', 
+          widget: 'list',
+          field: { label: 'Accomplishment', name: 'accomplishment', widget: 'text' }
+        }
+      - {
+          label: 'Linked Projects',
+          name: 'linkedprojects',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Project',
+              name: 'linkedproject',
+              widget: 'relation',
+              collection: 'projects',
+              value_field: 'title',
+              search_fields: ['title'],
+            },
+        }
+      - {
+          label: 'Linked Skills',
+          name: 'linkedskills',
+          widget: 'list',
+          field:
+            {
+              label: 'Linked Skill',
+              name: 'linkedskill',
+              widget: 'relation',
+              collection: 'skills',
+              value_field: 'name',
+              search_fields: ['name', 'linkedskills.*.linkedskill'],
+            },
+        }
+      
+      
