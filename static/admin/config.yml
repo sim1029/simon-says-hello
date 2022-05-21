@@ -75,12 +75,12 @@ collections:
         }
       - {
           label: 'Linked Projects',
-          name: 'linkedprojects',
+          name: 'linkedProjects',
           widget: 'list',
           field:
             {
               label: 'Linked Project',
-              name: 'linkedproject',
+              name: 'linkedProject',
               widget: 'relation',
               collection: 'projects',
               value_field: 'title',
@@ -89,12 +89,12 @@ collections:
         }
       - {
           label: 'Linked Organizations',
-          name: 'linkedorgs',
+          name: 'linkedOrgs',
           widget: 'list',
           field:
             {
               label: 'Linked Organization',
-              name: 'linkedorg',
+              name: 'linkedOrg',
               widget: 'relation',
               collection: 'organizations',
               value_field: 'name',
@@ -103,12 +103,12 @@ collections:
         }
       - {
           label: 'Linked Skills',
-          name: 'linkedskills',
+          name: 'linkedSkills',
           widget: 'list',
           field:
             {
               label: 'Linked Skill',
-              name: 'linkedskill',
+              name: 'linkedSkill',
               widget: 'relation',
               collection: 'skills',
               value_field: 'name',
@@ -137,11 +137,11 @@ collections:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Logo', name: 'logo', widget: 'image' }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Status', name: 'statue', widget: 'select', options: ['in progress', 'completed', 'abandoned']}
-      - { label: 'Featured Project', name: 'featuredproject', widget: 'boolean', required: false }
+      - { label: 'Status', name: 'status', widget: 'select', options: ['in progress', 'completed', 'abandoned']}
+      - { label: 'Featured Project', name: 'featuredProject', widget: 'boolean', required: false }
       - {
           label: 'Start Date',
-          name: 'startdate',
+          name: 'startDate',
           widget: 'datetime',
           default: '',
           time_format: false,
@@ -149,7 +149,7 @@ collections:
         }
       - {
           label: 'End Date',
-          name: 'enddate',
+          name: 'endDate',
           widget: 'datetime',
           default: '',
           time_format: false,
@@ -158,7 +158,7 @@ collections:
         }
       - { 
           label: 'Project Journal', 
-          name: 'projectjournal', 
+          name: 'projectJournal', 
           widget: 'file',
         }
       - { label: 'Repository URL', name: 'repository', widget: 'string', required: false }
@@ -176,12 +176,12 @@ collections:
       - { label: 'Demo URL', name: 'demo', widget: 'string', required: false }
       - {
           label: 'Linked Organizations',
-          name: 'linkedorgs',
+          name: 'linkedOrgs',
           widget: 'list',
           field:
             {
               label: 'Linked Organization',
-              name: 'linkedorg',
+              name: 'linkedOrg',
               widget: 'relation',
               collection: 'organizations',
               value_field: 'name',
@@ -190,12 +190,12 @@ collections:
         }
       - {
           label: 'Linked Skills',
-          name: 'linkedskills',
+          name: 'linkedSkills',
           widget: 'list',
           field:
             {
               label: 'Linked Skill',
-              name: 'linkedskill',
+              name: 'linkedSkill',
               widget: 'relation',
               collection: 'skills',
               value_field: 'name',
@@ -222,10 +222,10 @@ collections:
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Logo', name: 'logo', widget: 'image' }
       - { label: 'Description', name: 'description', widget: 'text' }
-      - { label: 'Current Organization', name: 'currentorg', widget: 'boolean', required: false }
+      - { label: 'Current Organization', name: 'currentOrg', widget: 'boolean', required: false }
       - {
           label: 'Start Date',
-          name: 'startdate',
+          name: 'startDate',
           widget: 'datetime',
           default: '',
           time_format: false,
@@ -233,7 +233,7 @@ collections:
         }
       - {
           label: 'End Date',
-          name: 'enddate',
+          name: 'endDate',
           widget: 'datetime',
           default: '',
           time_format: false,
@@ -241,7 +241,7 @@ collections:
           required: false
         }
       - { label: 'Role', name: 'role', widget: 'string' }
-      - { label: 'Role Description', name: 'roledescription', widget: 'text' } 
+      - { label: 'Role Description', name: 'roleDescription', widget: 'text' } 
       - { 
           label: 'Accomplishments',
           name: 'accomplishments', 
@@ -250,12 +250,12 @@ collections:
         }
       - {
           label: 'Linked Projects',
-          name: 'linkedprojects',
+          name: 'linkedProjects',
           widget: 'list',
           field:
             {
               label: 'Linked Project',
-              name: 'linkedproject',
+              name: 'linkedProject',
               widget: 'relation',
               collection: 'projects',
               value_field: 'title',
@@ -264,12 +264,12 @@ collections:
         }
       - {
           label: 'Linked Skills',
-          name: 'linkedskills',
+          name: 'linkedSkills',
           widget: 'list',
           field:
             {
               label: 'Linked Skill',
-              name: 'linkedskill',
+              name: 'linkedSkill',
               widget: 'relation',
               collection: 'skills',
               value_field: 'name',
