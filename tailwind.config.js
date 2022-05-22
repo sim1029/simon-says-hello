@@ -9,8 +9,15 @@ module.exports = {
       textDecorationThickness: {
         2: '6px',
       },
+      typography: {
+        sm: {
+          css: {
+            fontSize: '0.45rem',
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   darkMode: 'class',
 }
