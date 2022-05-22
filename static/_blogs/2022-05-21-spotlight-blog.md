@@ -19,6 +19,16 @@ tags:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tempor nec feugiat nisl pretium fusce id velit ut tortor. Sed risus pretium quam vulputate dignissim suspendisse in. Est placerat in egestas erat imperdiet sed euismod nisi porta. Aliquam etiam erat velit scelerisque in dictum. Orci a scelerisque purus semper eget duis. Eget duis at tellus at urna. Nec sagittis aliquam malesuada bibendum. Sit amet mauris commodo quis imperdiet massa tincidunt. Accumsan lacus vel facilisis volutpat est. Amet nulla facilisi morbi tempus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin. Velit egestas dui id ornare arcu. Gravida quis blandit turpis cursus in hac habitasse platea dictumst.
 
+```jsx
+const PopularBlogs = ({ posts }) => {
+    return (
+      <div className='flex'>
+        <h1>Popular Blogs</h1>
+      </div>
+    )
+  }
+```
+
 ## Testing H2 Text
 
 Lacus suspendisse faucibus interdum posuere. Eget magna fermentum iaculis eu. Pharetra massa massa ultricies mi quis. Malesuada nunc vel risus commodo viverra maecenas. Lacus sed viverra tellus in hac habitasse platea dictumst vestibulum. Pellentesque elit eget gravida cum sociis natoque penatibus. Non diam phasellus vestibulum lorem sed risus ultricies tristique. Id velit ut tortor pretium. Enim sed faucibus turpis in eu mi bibendum. Aliquet enim tortor at auctor. Duis ultricies lacus sed turpis tincidunt id. Sed vulputate odio ut enim. Adipiscing vitae proin sagittis nisl rhoncus. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Feugiat in ante metus dictum at tempor. Auctor elit sed vulputate mi sit amet mauris. Duis convallis convallis tellus id interdum velit laoreet. Eros in cursus turpis massa. Viverra orci sagittis eu volutpat odio facilisis.
@@ -30,15 +40,3 @@ Integer malesuada nunc vel risus. A arcu cursus vitae congue mauris rhoncus. Vol
 Etiam sit amet nisl purus. Vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt. Eu lobortis elementum nibh tellus molestie nunc non. Lacinia quis vel eros donec ac odio. Porttitor rhoncus dolor purus non enim praesent. Nunc congue nisi vitae suscipit tellus. Nisl purus in mollis nunc sed id. Vitae purus faucibus ornare suspendisse sed nisi lacus. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Risus viverra adipiscing at in tellus. Elit at imperdiet dui accumsan sit amet nulla. Odio tempor orci dapibus ultrices. Ipsum consequat nisl vel pretium lectus quam id. Sapien et ligula ullamcorper malesuada proin.
 
 Pharetra convallis posuere morbi leo urna molestie at elementum eu. Aliquet lectus proin nibh nisl condimentum id venenatis a condimentum. Hendrerit gravida rutrum quisque non tellus orci ac auctor augue. Ac feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Pellentesque habitant morbi tristique senectus et netus et. Eget egestas purus viverra accumsan. At quis risus sed vulputate odio ut enim blandit volutpat. Arcu risus quis varius quam quisque id diam vel quam. Risus in hendrerit gravida rutrum quisque non. Elementum curabitur vitae nunc sed velit. Morbi tempus iaculis urna id volutpat lacus. Enim sit amet venenatis urna cursus eget nunc scelerisque viverra. Aliquam ultrices sagittis orci a scelerisque purus semper eget. Mi in nulla posuere sollicitudin. Fringilla ut morbi tincidunt augue interdum velit.
-
-```
-Dictum sit amet justo donec enim. 
-Sit amet consectetur adipiscing elit pellentesque habitant morbi. 
-Mauris vitae ultricies leo integer malesuada nunc vel risus 
-commodo. Nibh praesent tristique magna sit amet purus gravida 
-quis blandit. Leo vel orci porta non. Mi tempus imperdiet 
-nulla malesuada pellentesque. Eget nunc lobortis mattis 
-aliquam faucibus purus in massa. Sed enim ut sem viverra 
-aliquet. Eu mi bibendum neque egestas congue quisque egestas.
-Pulvinar mattis nunc sed blandit libero volutpat sed cras ornare. 
-```
