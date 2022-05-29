@@ -2,8 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage } from "gatsby-plugin-image";
 
-const PreviewCompatibleImage = ({ imageInfo }) => {
-  const imageStyle = { borderRadius: "5px" };
+const PreviewCompatibleImage = ({ imageInfo, imageStyle }) => {
 
   const { alt = "", childImageSharp, image } = imageInfo;
 
@@ -11,7 +10,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={image.childImageSharp.gatsbyImageData}
-        style={imageStyle}
+        className={imageStyle}
         alt={alt}
       />
     );
@@ -19,7 +18,7 @@ const PreviewCompatibleImage = ({ imageInfo }) => {
     return (
       <GatsbyImage
         image={childImageSharp.gatsbyImageData}
-        style={imageStyle}
+        className={imageStyle}
         alt={alt}
       />
     );
