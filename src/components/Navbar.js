@@ -24,27 +24,27 @@ const Navbar = ({ themeToggle }) => {
       </Logo>
       <nav>
         <section className='flex lg:hidden'>
-          <div
+          <button
             className='cursor-pointer space-y-2'
             onClick={() => setIsNavOpen((prev) => !prev)}
           >
             <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
             <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
             <span className='block h-1 w-10 bg-gray-800 dark:bg-slate-200'></span>
-          </div>
+          </button>
           <div
             className={
               isNavOpen
-                ? 'fixed top-0 left-0 z-10 flex h-screen w-screen flex-col items-center justify-evenly bg-slate-200 dark:bg-gray-800'
+                ? 'fixed overflow-hidden top-0 left-0 z-10 flex h-screen w-screen flex-col items-center justify-evenly bg-slate-200 dark:bg-gray-800'
                 : 'hidden'
             }
           >
-            <div
+            <button
               className='absolute top-0 right-0 cursor-pointer px-8 py-8'
               onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
             >
               <CrossButton />
-            </div>
+            </button>
             <div className='absolute top-0 left-0 flex space-x-8 px-8 py-8'>
               <ToggleSlider onClick={themeToggle}></ToggleSlider>
               <Logo imgStyles='w-10 h-10' />
