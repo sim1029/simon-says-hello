@@ -13,7 +13,7 @@ const BlogRoll = () => {
         edges {
           node {
             id
-            excerpt(pruneLength: 1000, format: HTML)
+            excerpt(pruneLength: 1500, format: HTML)
             fields {
               slug
             }
@@ -39,24 +39,24 @@ const BlogRoll = () => {
   const { edges: posts } = data.allMarkdownRemark
 
   return (
-    <div className='mx-20 flex flex-col'>
+    <div className='px-4 md:px-8 py-4 gap-y-10 lg:px-20 lg:py-10 flex flex-col'>
       {posts && (
-        <>
-          <div className='ml-10 flex flex-col items-center'>
-            <h1 className='mt-10 self-start text-3xl font-bold'>
+        <div className='contents'>
+          <div className='flex gap-y-8 flex-col items-center'>
+            <h1 className='text-4xl font-bold'>
               Spotlight Post
             </h1>
             <SpotlightBlog edge={posts[0]} />
           </div>
-          <div className='mt-10 ml-10 flex flex-col'>
-            <h1 className='self-start text-3xl font-bold'>Recent Posts</h1>
+          <div className='flex flex-col'>
+            <h1 className='text-4xl self-center lg:self-start font-bold'>Recent Posts</h1>
             <ScrollableBlogs posts={posts} />
           </div>
-          <div className='mt-10 ml-10 flex flex-col'>
-            <h1 className='self-start text-3xl font-bold'>Popular Posts</h1>
+          <div className='flex flex-col'>
+            <h1 className='text-4xl self-center lg:self-start font-bold'>Popular Posts</h1>
             <ScrollableBlogs posts={posts} />
           </div>
-        </>
+        </div>
       )}
     </div>
   )
