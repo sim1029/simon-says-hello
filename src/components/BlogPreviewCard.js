@@ -1,31 +1,35 @@
 import { BsFillEyeFill } from '@react-icons/all-files/bs/BsFillEyeFill'
 import { BsHeartFill } from '@react-icons/all-files/bs/BsHeartFill'
-import React from 'react'
 import { Link } from 'gatsby'
+import React from 'react'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const BlogPreviewCard = ({ post }) => {
   return (
-    <div className='flex rounded-lg bg-slate-300 shadow-md dark:bg-gray-700 transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-2 hover:border-blue dark:hover:border-red'>
-      <article className='contents'>
-        <header>
-          {post.frontmatter.featuredimage ? (
-            <PreviewCompatibleImage
-              imageInfo={{
-                image: post.frontmatter.featuredimage,
-                alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                width:
-                  post.frontmatter.featuredimage.childImageSharp.gatsbyImageData
-                    .width,
-                height:
-                  post.frontmatter.featuredimage.childImageSharp.gatsbyImageData
-                    .height,
-              }}
-              imageStyle={'rounded-l-lg'}
-            />
-          ) : null}
-        </header>
-        <Link to={post.fields.slug} className='group flex flex-col justify-evenly p-4 '>
+    <div className='mb-8 w-3/4 flex-none rounded-xl bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-2 hover:border-blue dark:bg-gray-700 dark:hover:border-red lg:w-1/2 '>
+      <div className='flex'>
+        <article className='contents'>
+          <header>
+            {post.frontmatter.featuredimage ? (
+              <PreviewCompatibleImage
+                imageInfo={{
+                  image: post.frontmatter.featuredimage,
+                  alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                  width:
+                    post.frontmatter.featuredimage.childImageSharp
+                      .gatsbyImageData.width,
+                  height:
+                    post.frontmatter.featuredimage.childImageSharp
+                      .gatsbyImageData.height,
+                }}
+                imageStyle={'rounded-l-lg'}
+              />
+            ) : null}
+          </header>
+          <Link
+            to={post.fields.slug}
+            className='group flex flex-col justify-evenly p-4 '
+          >
             <h1 className='text-lg font-bold'>{post.frontmatter.title}</h1>
             <div className='flex justify-between text-sm text-gray-600 dark:text-slate-400'>
               <p className=''>{post.frontmatter.date}</p>
@@ -51,8 +55,9 @@ const BlogPreviewCard = ({ post }) => {
                 Keep Reading <span>&rarr;</span>
               </p>
             </div>
-        </Link>
-      </article>
+          </Link>
+        </article>
+      </div>
     </div>
   )
 }
