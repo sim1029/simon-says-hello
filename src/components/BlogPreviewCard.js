@@ -6,10 +6,10 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 const BlogPreviewCard = ({ post }) => {
   return (
-    <div className='mb-8 w-3/4 flex-none rounded-xl bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-2 hover:border-blue dark:bg-gray-700 dark:hover:border-red lg:w-1/2 '>
-      <div className='flex'>
-        <article className='contents'>
-          <header>
+    <div className='mb-8 flex-none rounded-xl bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 border-2 border-slate-300 hover:border-blue dark:bg-gray-700 dark:hover:border-red lg:w-1/2 h-[250px]'>
+      <Link to={post.fields.slug} className="content">
+        <article className='flex'>
+          <header className='shrink-0'>
             {post.frontmatter.featuredimage ? (
               <PreviewCompatibleImage
                 imageInfo={{
@@ -26,8 +26,7 @@ const BlogPreviewCard = ({ post }) => {
               />
             ) : null}
           </header>
-          <Link
-            to={post.fields.slug}
+          <div
             className='group flex flex-col justify-evenly p-4 '
           >
             <h1 className='text-lg font-bold'>{post.frontmatter.title}</h1>
@@ -55,9 +54,9 @@ const BlogPreviewCard = ({ post }) => {
                 Keep Reading <span>&rarr;</span>
               </p>
             </div>
-          </Link>
+          </div>
         </article>
-      </div>
+        </Link>
     </div>
   )
 }

@@ -25,7 +25,7 @@ const BlogRoll = () => {
               description
               featuredimage {
                 childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 100, height: 200)
+                  gatsbyImageData(layout: CONSTRAINED, width: 150, height: 250)
                 }
               }
             }
