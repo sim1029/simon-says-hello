@@ -1,8 +1,9 @@
 import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
 import ScrollableBlogs from "./ScrollableBlogs";
 import SpotlightBlog from "./SpotlightBlog";
 
-const BlogRoll = () => {
+function BlogRoll() {
 	const data = useStaticQuery(graphql`
 		query BlogRollQuery {
 			allMarkdownRemark(
@@ -61,6 +62,6 @@ const BlogRoll = () => {
 			)}
 		</div>
 	);
-};
+}
 
 export default BlogRoll;

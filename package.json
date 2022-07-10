@@ -40,7 +40,7 @@
 		"format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint .",
-		"lint:fix": "eslint --fix .",
+		"lint:fix": "npx eslint --fix --ext .jsx --ext .js src/",
 		"prepare": "husky install"
 	},
 	"engines": {
