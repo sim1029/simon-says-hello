@@ -36,7 +36,8 @@ const ScrollableBlogs = ({ posts }) => {
 							return (
 								<h1
 									className={classNames("hover:cursor-default", {
-										"rounded-md bg-blue py-1 px-3 text-white": page === num,
+										"rounded-md bg-blue py-1 px-3 text-white dark:bg-red":
+											page === num,
 									})}
 								>
 									{num + 1}

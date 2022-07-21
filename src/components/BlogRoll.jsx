@@ -43,9 +43,6 @@ function BlogRoll() {
 
 	const { edges: posts } = data.allMarkdownRemark;
 
-	// Delete after testing
-	const extraPosts = [...posts, ...posts, ...posts];
-
 	return (
 		<div className="flex flex-col gap-y-10 px-4 py-4 md:px-8 lg:px-20 lg:py-10">
 			{posts && (
@@ -58,7 +55,7 @@ function BlogRoll() {
 						<h1 className="self-center text-4xl font-bold lg:self-start">
 							Recent Posts
 						</h1>
-						<ScrollableBlogs posts={extraPosts} />
+						<ScrollableBlogs posts={posts} />
 					</div>
 					<div className="flex flex-col space-y-8">
 						<h1 className="self-center text-4xl font-bold lg:self-start">
