@@ -5,6 +5,7 @@
 	"author": "Simon Schueller",
 	"dependencies": {
 		"@react-icons/all-files": "^4.1.0",
+		"classnames": "^2.3.1",
 		"gatsby": "^4.0.0",
 		"gatsby-plugin-image": "^2.0.0",
 		"gatsby-plugin-netlify": "^4.3.1",
@@ -41,7 +42,8 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"lint": "eslint .",
 		"lint:fix": "npx eslint --fix --ext .jsx --ext .js src/",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"commit": "git add . && git commit -m"
 	},
 	"engines": {
 		"node": ">= 14.15.0"

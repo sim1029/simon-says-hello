@@ -14,8 +14,10 @@ function SpotlightBlog({ edge }) {
 				</div>
 				<div className="flex max-w-xl flex-col gap-y-4">
 					<h1 className="text-2xl font-bold">{edge.node.frontmatter.title}</h1>
-					<p>{edge.node.frontmatter.description}</p>
-					<p className="self-end underline decoration-blue decoration-2 underline-offset-4 opacity-0 transition duration-500 ease-linear group-hover:opacity-100 dark:decoration-red">
+					<p className="hidden md:inline">
+						{edge.node.frontmatter.description}
+					</p>
+					<p className="hidden self-end underline decoration-blue decoration-2 underline-offset-4 opacity-0 transition duration-500 ease-linear group-hover:opacity-100 dark:decoration-red md:inline">
 						Keep Reading <span>&rarr;</span>
 					</p>
 				</div>

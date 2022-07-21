@@ -20,12 +20,17 @@ function BlogRoll() {
 						frontmatter {
 							title
 							templateKey
+							tags
 							date(formatString: "MMMM DD, YYYY")
 							featuredpost
 							description
 							featuredimage {
 								childImageSharp {
-									gatsbyImageData(layout: CONSTRAINED, width: 150, height: 250)
+									gatsbyImageData(
+										placeholder: BLURRED
+										layout: CONSTRAINED
+										height: 225
+									)
 								}
 							}
 						}
@@ -38,6 +43,9 @@ function BlogRoll() {
 
 	const { edges: posts } = data.allMarkdownRemark;
 
+	// Delete after testing
+	const extraPosts = [...posts, ...posts, ...posts];
+
 	return (
 		<div className="flex flex-col gap-y-10 px-4 py-4 md:px-8 lg:px-20 lg:py-10">
 			{posts && (
@@ -46,13 +54,13 @@ function BlogRoll() {
 						<h1 className="text-4xl font-bold">Spotlight Post</h1>
 						<SpotlightBlog edge={posts[0]} />
 					</div>
-					<div className="flex flex-col">
+					<div className="flex flex-col space-y-8">
 						<h1 className="self-center text-4xl font-bold lg:self-start">
 							Recent Posts
 						</h1>
-						<ScrollableBlogs posts={posts} />
+						<ScrollableBlogs posts={extraPosts} />
 					</div>
-					<div className="flex flex-col">
+					<div className="flex flex-col space-y-8">
 						<h1 className="self-center text-4xl font-bold lg:self-start">
 							Popular Posts
 						</h1>

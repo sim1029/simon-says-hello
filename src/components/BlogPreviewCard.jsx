@@ -1,58 +1,50 @@
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { BsHeartFill } from "@react-icons/all-files/bs/BsHeartFill";
 import { Link } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import React from "react";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 function BlogPreviewCard({ post }) {
+	const image = getImage(post.frontmatter.featuredimage);
 	return (
-		<div className="mb-8 h-[250px] flex-none rounded-xl border-2 border-slate-300 bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:bg-gray-700 dark:hover:border-red lg:w-1/2">
-			<Link to={post.fields.slug} className="content">
-				<article className="flex">
-					<header className="shrink-0">
-						{post.frontmatter.featuredimage ? (
-							<PreviewCompatibleImage
-								imageInfo={{
-									image: post.frontmatter.featuredimage,
-									alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-									width:
-										post.frontmatter.featuredimage.childImageSharp
-											.gatsbyImageData.width,
-									height:
-										post.frontmatter.featuredimage.childImageSharp
-											.gatsbyImageData.height,
-								}}
-								imageStyle="rounded-l-lg"
-							/>
-						) : null}
-					</header>
-					<div className="group flex flex-col justify-evenly p-4 ">
-						<h1 className="text-lg font-bold">{post.frontmatter.title}</h1>
-						<div className="flex justify-between text-sm text-gray-600 dark:text-slate-400">
-							<p className="">{post.frontmatter.date}</p>
-							<div className="flex space-x-4">
-								<p className="flex items-center">
-									<BsFillEyeFill className="mr-1 " />
-									69
-								</p>
-								<p className="flex items-center">
-									<BsHeartFill className="mr-1 fill-red" />
-									69
-								</p>
-								<p>{post.timeToRead} Min</p>
-							</div>
-						</div>
-						<div className="flex justify-between">
-							<ul className="flex space-x-2">
-								<li>Tag 1</li>
-								<li>Tag 2</li>
-								<li>Tag 3</li>
-							</ul>
-							<p className="underline decoration-blue decoration-2 underline-offset-4 opacity-0 transition duration-500 ease-linear group-hover:opacity-100 dark:decoration-red ">
-								Keep Reading <span>&rarr;</span>
+		<div className="group mb-8 flex h-[225px] w-[500px] rounded-xl border-2 border-slate-300 bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
+			<Link to={post.fields.slug} className="contents">
+				<article className="contents">
+					{post.frontmatter.featuredimage ? (
+						<GatsbyImage
+							className="rounded-l-xl sm:shrink-0"
+							image={image}
+							alt={post.frontmatter.title}
+						/>
+					) : null}
+					<div className="flex w-full flex-col justify-evenly px-4">
+						<h1 className="text-lg font-bold">
+							{post.frontmatter.title.length > 30
+								? `${post.frontmatter.title.slice(0, 30)}...`
+								: post.frontmatter.title}
+						</h1>
+						<p className="text-sm text-gray-600 dark:text-slate-400">
+							{post.frontmatter.date}
+						</p>
+						<div className="flex space-x-4 text-sm text-gray-600 dark:text-slate-400">
+							<p className="flex items-center">
+								<BsFillEyeFill className="mr-1 " />
+								69
 							</p>
+							<p className="flex items-center">
+								<BsHeartFill className="mr-1 fill-red" />
+								69
+							</p>
+							<p>{post.timeToRead} Min</p>
 						</div>
+						<ul className="flex space-x-4 text-sm">
+							{post.frontmatter.tags.map((tag) => (
+								<li className="font-bold underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red">
+									{tag}
+								</li>
+							))}
+						</ul>
 					</div>
 				</article>
 			</Link>
@@ -70,6 +62,7 @@ BlogPreviewCard.propTypes = {
 		frontmatter: PropTypes.shape({
 			title: PropTypes.string,
 			templateKey: PropTypes.string,
+			tags: PropTypes.arrayOf(PropTypes.string),
 			date: PropTypes.string,
 			featuredPost: PropTypes.bool,
 			description: PropTypes.string,
