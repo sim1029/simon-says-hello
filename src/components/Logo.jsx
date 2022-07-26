@@ -14,7 +14,11 @@ const Logo = ({ imgStyles, children }) => {
 
 Logo.propTypes = {
 	imgStyles: PropTypes.string.isRequired,
-	children: PropTypes.node.isRequired,
+	children: PropTypes.node,
+};
+
+Logo.defaultProps = {
+	children: null,
 };
 
 export default Logo;

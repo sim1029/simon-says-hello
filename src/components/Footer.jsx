@@ -94,7 +94,11 @@ function Footer({ theme }) {
 }
 
 Footer.propTypes = {
-	theme: PropTypes.string.isRequired,
+	theme: PropTypes.string,
+};
+
+Footer.defaultProps = {
+	theme: "light",
 };
 
 export default Footer;

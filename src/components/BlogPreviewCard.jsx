@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { BsHeartFill } from "@react-icons/all-files/bs/BsHeartFill";
 import { Link } from "gatsby";
@@ -9,7 +10,7 @@ function BlogPreviewCard({ post }) {
 	const image = getImage(post.frontmatter.featuredimage);
 	return (
 		<div className="group mb-8 flex h-[225px] w-[500px] rounded-xl border-2 border-slate-300 bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
-			<Link to={post.fields.slug} className="contents">
+			<Link to={`/blog/${post.slug}`} className="contents">
 				<article className="contents">
 					{post.frontmatter.featuredimage ? (
 						<GatsbyImage
@@ -39,8 +40,11 @@ function BlogPreviewCard({ post }) {
 							<p>{post.timeToRead} Min</p>
 						</div>
 						<ul className="flex space-x-4 text-sm">
-							{post.frontmatter.tags.map((tag) => (
-								<li className="font-bold underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red">
+							{post.frontmatter.tags.map((tag, index) => (
+								<li
+									key={index}
+									className="font-bold underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red"
+								>
 									{tag}
 								</li>
 							))}
@@ -54,28 +58,19 @@ function BlogPreviewCard({ post }) {
 
 BlogPreviewCard.propTypes = {
 	post: PropTypes.shape({
-		id: PropTypes.string,
-		excerpt: PropTypes.string,
-		fields: PropTypes.shape({
-			slug: PropTypes.string,
-		}),
 		frontmatter: PropTypes.shape({
 			title: PropTypes.string,
 			templateKey: PropTypes.string,
-			tags: PropTypes.arrayOf(PropTypes.string),
 			date: PropTypes.string,
 			featuredPost: PropTypes.bool,
 			description: PropTypes.string,
-			featuredimage: PropTypes.shape({
-				childImageSharp: PropTypes.shape({
-					gatsbyImageData: PropTypes.shape({
-						width: PropTypes.number,
-						height: PropTypes.number,
-					}),
-				}),
-			}),
+			featuredimage: PropTypes.string,
+			tags: PropTypes.arrayOf(PropTypes.string),
 		}),
-		timeToRead: PropTypes.number.isRequired,
+		timeToRead: PropTypes.number,
+		id: PropTypes.string,
+		body: PropTypes.string,
+		slug: PropTypes.string,
 	}).isRequired,
 };
 

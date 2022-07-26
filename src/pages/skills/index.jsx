@@ -1,7 +1,14 @@
 import React from "react";
+import Layout from "../../components/Layout";
 
 function SkillsPage() {
-	return <div>SkillsPage</div>;
+	return (
+		<Layout>
+			<div className="flex h-full w-full flex-col items-center justify-center">
+				<h1>Skills Page</h1>
+			</div>
+		</Layout>
+	);
 }
 
 export default SkillsPage;
