@@ -20,7 +20,7 @@ function Navbar({ themeToggle }) {
 	return (
 		<div className="flex items-center justify-between bg-slate-200 px-8 py-8 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200 lg:justify-around lg:py-10">
 			<Logo imgStyles="h-10 w-10">
-				<h1 className="text-xl font-bold">Simon-Says-Hello</h1>
+				<h1 className="hidden text-xl font-bold sm:inline">Simon-Says-Hello</h1>
 			</Logo>
 			<nav>
 				<section className="flex lg:hidden">

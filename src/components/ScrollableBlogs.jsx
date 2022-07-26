@@ -7,7 +7,8 @@ import BlogPreviewCard from "./BlogPreviewCard";
 
 const ScrollableBlogs = ({ posts }) => {
 	const [page, setPage] = React.useState(0);
-	const pageNums = [...Array(posts.length / 4).keys()];
+
+	const pageNums = Array.from(Array(Math.ceil((posts.length - 1) / 4)).keys());
 
 	const handleRightClick = useCallback(() => {
 		if (page < posts.length / 4 - 1) setPage(page + 1);
@@ -18,8 +19,8 @@ const ScrollableBlogs = ({ posts }) => {
 	});
 
 	return (
-		<div className="flex flex-1 flex-wrap justify-center lg:justify-start">
-			{posts.slice(page * 4, page * 4 + 4).map(({ node: post }) => {
+		<div className="flex flex-1 flex-wrap justify-center">
+			{posts.slice(page * 4, page * 4 + 4).map((post) => {
 				return <BlogPreviewCard post={post} key={post.id} />;
 			})}
 			<div className="flex w-full items-center justify-center space-x-4">
@@ -60,29 +61,22 @@ const ScrollableBlogs = ({ posts }) => {
 ScrollableBlogs.propTypes = {
 	posts: PropTypes.arrayOf(
 		PropTypes.shape({
-			id: PropTypes.string,
-			excerpt: PropTypes.string,
-			fields: PropTypes.shape({
+			post: PropTypes.shape({
+				frontmatter: PropTypes.shape({
+					title: PropTypes.string,
+					templateKey: PropTypes.string,
+					date: PropTypes.string,
+					featuredPost: PropTypes.bool,
+					description: PropTypes.string,
+					featuredimage: PropTypes.string,
+					tags: PropTypes.arrayOf(PropTypes.string),
+				}),
+				timeToRead: PropTypes.number,
+				id: PropTypes.string,
+				body: PropTypes.string,
 				slug: PropTypes.string,
 			}),
-			frontmatter: PropTypes.shape({
-				title: PropTypes.string,
-				templateKey: PropTypes.string,
-				tags: PropTypes.arrayOf(PropTypes.string),
-				date: PropTypes.string,
-				featuredPost: PropTypes.bool,
-				description: PropTypes.string,
-				featuredimage: PropTypes.shape({
-					childImageSharp: PropTypes.shape({
-						gatsbyImageData: PropTypes.shape({
-							width: PropTypes.number,
-							height: PropTypes.number,
-						}),
-					}),
-				}),
-			}),
-			timeToRead: PropTypes.number.isRequired,
-		}).isRequired,
+		}),
 	).isRequired,
 };
 
