@@ -58,7 +58,12 @@ module.exports = {
 				modulePath: `${__dirname}/src/cms/cms.js`,
 			},
 		},
-		"gatsby-plugin-mdx",
+		{
+			resolve: "gatsby-plugin-mdx",
+			options: {
+				extensions: [`.md`, `.mdx`],
+			},
+		},
 		"gatsby-plugin-postcss",
 		"gatsby-plugin-netlify", // make sure to keep it last in the array
 	],

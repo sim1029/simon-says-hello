@@ -5,7 +5,6 @@ import * as React from "react";
 import Layout from "../../components/Layout";
 
 const BlogPost = ({ data }) => {
-	console.log("Data", data);
 	return (
 		<Layout>
 			<article className="prose prose-xl self-center dark:prose-invert">

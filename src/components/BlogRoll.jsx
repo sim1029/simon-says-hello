@@ -15,6 +15,16 @@ function BlogRoll() {
 						featuredpost
 						tags
 						templateKey
+						hero_image_alt
+						hero_image {
+							childImageSharp {
+								gatsbyImageData(
+									placeholder: BLURRED
+									layout: CONSTRAINED
+									width: 225
+								)
+							}
+						}
 					}
 					timeToRead
 					body
