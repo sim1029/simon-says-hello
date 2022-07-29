@@ -1,12 +1,13 @@
 import React from "react";
-import Layout from "../components/Layout";
+import Layout from "../components/layout/Layout";
+import SplashHeader from "../components/splash/SplashHeader";
 
 const Index = () => {
 	return (
 		<Layout>
-			<section>
-				<div className="text-center">Splash Page!</div>
-			</section>
+			<div className="flex flex-col">
+				<SplashHeader />
+			</div>
 		</Layout>
 	);
 };

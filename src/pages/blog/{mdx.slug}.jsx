@@ -2,7 +2,7 @@ import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { PropTypes } from "prop-types";
 import * as React from "react";
-import Layout from "../../components/Layout";
+import Layout from "../../components/layout/Layout";
 
 const BlogPost = ({ data }) => {
 	return (
