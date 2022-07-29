@@ -7,14 +7,14 @@ import PropTypes from "prop-types";
 import React from "react";
 
 function BlogPreviewCard({ post }) {
-	const image = getImage(post.frontmatter.featuredimage);
+	const image = getImage(post.frontmatter.hero_image);
 	return (
 		<div className="group mb-8 flex h-[225px] w-[500px] rounded-xl border-2 border-slate-300 bg-slate-300 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
 			<Link to={`/blog/${post.slug}`} className="contents">
 				<article className="contents">
-					{post.frontmatter.featuredimage ? (
+					{post.frontmatter.hero_image ? (
 						<GatsbyImage
-							className="rounded-l-xl sm:shrink-0"
+							className="hidden rounded-l-xl sm:shrink-0 md:inline"
 							image={image}
 							alt={post.frontmatter.title}
 						/>
@@ -64,7 +64,11 @@ BlogPreviewCard.propTypes = {
 			date: PropTypes.string,
 			featuredPost: PropTypes.bool,
 			description: PropTypes.string,
-			featuredimage: PropTypes.string,
+			hero_image: PropTypes.shape({
+				childImageSharp: PropTypes.shape({
+					gatsbyImageData: PropTypes.string,
+				}),
+			}),
 			tags: PropTypes.arrayOf(PropTypes.string),
 		}),
 		timeToRead: PropTypes.number,
