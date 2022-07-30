@@ -5,7 +5,7 @@ import SplashHeader from "../components/splash/SplashHeader";
 const Index = () => {
 	return (
 		<Layout>
-			<div className="flex flex-col">
+			<div className="my-8 flex flex-col">
 				<SplashHeader />
 			</div>
 		</Layout>
