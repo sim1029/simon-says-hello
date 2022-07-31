@@ -160,7 +160,7 @@ collections:
           widget: "datetime",
           default: "",
           time_format: false,
-          date_format: "MM.DD.YYYY",
+          date_format: "MM.YYYY",
         }
       - {
           label: "End Date",
@@ -168,27 +168,22 @@ collections:
           widget: "datetime",
           default: "",
           time_format: false,
-          date_format: "MM.DD.YYYY",
+          date_format: "MM.YYYY",
           required: false,
         }
-      - { label: "Project Journal", name: "projectJournal", widget: "file" }
+      - { label: "Project Journal", name: "body", widget: "markdown" }
       - {
           label: "Repository URL",
           name: "repository",
           widget: "string",
           required: false,
         }
-      - {
-          label: "Screenshots",
-          name: "screenshots",
-          widget: "list",
-          field: { label: "Screenshot", name: "screenshot", widget: "image" },
-        }
       - { label: "Demo URL", name: "demo", widget: "string", required: false }
       - {
           label: "Linked Organizations",
           name: "linkedOrgs",
           widget: "list",
+          required: false,
           field:
             {
               label: "Linked Organization",
@@ -203,6 +198,7 @@ collections:
           label: "Linked Skills",
           name: "linkedSkills",
           widget: "list",
+          required: false,
           field:
             {
               label: "Linked Skill",
@@ -219,10 +215,7 @@ collections:
     label_singular: "Organization"
     folder: "static/_organizations"
     slug: "{{slug}}"
-    path: "{{slug}}/index"
     identifier_field: name
-    media_folder: ""
-    public_folder: ""
     create: true
     editor:
       preview: false
@@ -248,7 +241,7 @@ collections:
           widget: "datetime",
           default: "",
           time_format: false,
-          date_format: "MM.DD.YYYY",
+          date_format: "MM.YYYY",
         }
       - {
           label: "End Date",
@@ -256,7 +249,7 @@ collections:
           widget: "datetime",
           default: "",
           time_format: false,
-          date_format: "MM.DD.YYYY",
+          date_format: "MM.YYYY",
           required: false,
         }
       - { label: "Role", name: "role", widget: "string" }
