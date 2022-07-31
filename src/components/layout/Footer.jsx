@@ -1,8 +1,8 @@
 import { PropTypes } from "prop-types";
 import React from "react";
-import logo from "../img/logo.png";
-import githubLogoDark from "../img/social/github-icon-dark.svg";
-import githubLogo from "../img/social/github-icon.svg";
+import logo from "../../img/logo.png";
+import githubLogoDark from "../../img/social/github-icon-dark.svg";
+import githubLogo from "../../img/social/github-icon.svg";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";

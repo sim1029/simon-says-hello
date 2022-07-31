@@ -2,7 +2,7 @@ import { withPrefix } from "gatsby";
 import { PropTypes } from "prop-types";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import useSiteMetadata from "../utils/SiteMetadata";
+import useSiteMetadata from "../../utils/SiteMetadata";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 

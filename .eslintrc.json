@@ -21,6 +21,8 @@
 		"prettier" // Always have as last
 	],
 	"rules": {
-		"react/function-component-definition": 0
+		"react/function-component-definition": 0,
+		"import/extensions": 0,
+		"import/no-unresolved": 0
 	}
 }

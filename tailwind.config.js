@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 /* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable prettier/prettier */
 module.exports = {
@@ -5,8 +6,14 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				red: "#E94560",
-				blue: "#3282B8",
+				red: {
+					DEFAULT: "#E94560",
+					dark: "#D93550",
+				},
+				blue: {
+					DEFAULT: "#3282B8",
+					dark: "#2070A6",
+				},
 			},
 			textDecorationThickness: {
 				2: "6px",
