@@ -18,11 +18,7 @@ function BlogRoll() {
 						hero_image_alt
 						hero_image {
 							childImageSharp {
-								gatsbyImageData(
-									placeholder: BLURRED
-									layout: CONSTRAINED
-									width: 225
-								)
+								gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 225)
 							}
 						}
 					}

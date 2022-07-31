@@ -8,11 +8,11 @@ module.exports = {
 			colors: {
 				red: {
 					DEFAULT: "#E94560",
-					dark: "#CF3030",
+					dark: "#D93550",
 				},
 				blue: {
 					DEFAULT: "#3282B8",
-					dark: "#2666CF",
+					dark: "#2070A6",
 				},
 			},
 			textDecorationThickness: {

@@ -219,7 +219,10 @@ collections:
     label_singular: "Organization"
     folder: "static/_organizations"
     slug: "{{slug}}"
+    path: "{{slug}}/index"
     identifier_field: name
+    media_folder: ""
+    public_folder: ""
     create: true
     editor:
       preview: false
@@ -237,7 +240,7 @@ collections:
           label: "Current Organization",
           name: "currentOrg",
           widget: "boolean",
-          required: false,
+          required: true,
         }
       - {
           label: "Start Date",

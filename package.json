@@ -53,7 +53,7 @@
 		"node": ">= 14.15.0"
 	},
 	"lint-staged": {
-		"*.{js,jsx,ts,tsx,md,html}": [
+		"*.{js,jsx,ts,tsx}": [
 			"eslint",
 			"eslint --fix",
 			"prettier --write"

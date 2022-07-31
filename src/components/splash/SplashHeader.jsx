@@ -32,7 +32,7 @@ const SplashHeader = () => {
 				Please explore this website to learn more about me and what I am
 				passionate about
 			</p>
-			<div className="flex space-x-8">
+			<div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8">
 				<button
 					type="button"
 					className="w-24 border-[3px] border-solid border-gray-700 py-2 px-4 font-bold hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
@@ -41,7 +41,7 @@ const SplashHeader = () => {
 				</button>
 				<button
 					type="button"
-					className="w-24 bg-blue py-2 px-4 font-bold hover:bg-blue-dark hover:text-slate-200 dark:bg-red dark:hover:bg-red-dark "
+					className="w-24 bg-blue py-2 px-4 font-bold text-slate-200 hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark "
 				>
 					Github
 				</button>
