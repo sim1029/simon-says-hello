@@ -4,10 +4,15 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import React from "react";
+import { useColorMode } from "../../context/useColorMode";
+import githubDarkLogo from "../../img/social/github-icon-dark.svg";
 import githubLogo from "../../img/social/github-icon.svg";
 import liveLink from "../../img/svg/link.svg";
 
 const ProjectPreview = ({ project }) => {
+	const theme = useColorMode();
+	const githubIcon = theme === "dark" ? githubDarkLogo : githubLogo;
+
 	const info = project.frontmatter;
 	const image = getImage(info.logo);
 	const padTo2Digits = (num) => {
@@ -35,8 +40,6 @@ const ProjectPreview = ({ project }) => {
 		info.startDate && info.startDate !== "" ? new Date(info.startDate) : null;
 	const end =
 		info.endDate && info.endDate !== "" ? new Date(info.endDate) : null;
-
-	console.log(start, end);
 
 	return (
 		<div className="group mb-8 flex h-[250px] min-w-[500px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
@@ -71,7 +74,7 @@ const ProjectPreview = ({ project }) => {
 					<div className="flex space-x-6">
 						{info.repository && (
 							<a href={info.repository}>
-								<img src={githubLogo} alt="github" className="w-10" />
+								<img src={githubIcon} alt="github" className="w-10" />
 							</a>
 						)}
 						{info.demo && (

@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
 import React from "react";
+import { useColorMode } from "../../context/useColorMode";
 import logo from "../../img/logo.png";
 import githubLogoDark from "../../img/social/github-icon-dark.svg";
 import githubLogo from "../../img/social/github-icon.svg";
@@ -7,7 +7,8 @@ import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
 
-function Footer({ theme }) {
+function Footer() {
+	const theme = useColorMode();
 	const github = theme === "dark" ? githubLogoDark : githubLogo;
 
 	const socialsLinks = [
@@ -92,13 +93,5 @@ function Footer({ theme }) {
 		</footer>
 	);
 }
-
-Footer.propTypes = {
-	theme: PropTypes.string,
-};
-
-Footer.defaultProps = {
-	theme: "light",
-};
 
 export default Footer;
