@@ -94,8 +94,7 @@ const OrganizationTimeline = () => {
 									<h2 className="text-lg font-bold">My Role</h2>
 									<p>{info.roleDescription}</p>
 								</div>
-								{(info.accomplishments && info.accomplishments.length > 0) >
-									0 && (
+								{info.accomplishments && info.accomplishments.length > 0 && (
 									<div className="flex flex-col">
 										<h2 className="text-lg font-bold">Major Accomplishments</h2>
 										<ul className="list-disc">

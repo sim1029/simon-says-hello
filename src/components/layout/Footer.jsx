@@ -1,4 +1,4 @@
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import React from "react";
 import logo from "../../img/logo.png";
 import githubLogoDark from "../../img/social/github-icon-dark.svg";

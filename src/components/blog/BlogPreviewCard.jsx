@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable react/no-array-index-key */
 import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
 import { BsHeartFill } from "@react-icons/all-files/bs/BsHeartFill";
@@ -9,7 +10,7 @@ import React from "react";
 function BlogPreviewCard({ post }) {
 	const image = getImage(post.frontmatter.hero_image);
 	return (
-		<div className="group mb-8 flex h-[225px] w-[500px] rounded-xl border-2 border-slate-300 bg-slate-300 px-2 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
+		<div className="group mb-8 flex h-[225px] max-w-[600px] rounded-xl border-4 border-slate-300 bg-slate-300 px-2 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
 			<Link to={`/blog/${post.slug}`} className="contents">
 				<article className="contents">
 					<div className="flex flex-col justify-center">
