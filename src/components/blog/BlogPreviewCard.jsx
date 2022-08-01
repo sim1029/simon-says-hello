@@ -10,19 +10,19 @@ import React from "react";
 function BlogPreviewCard({ post }) {
 	const image = getImage(post.frontmatter.hero_image);
 	return (
-		<div className="group mb-8 flex h-[225px] max-w-[600px] rounded-xl border-4 border-slate-300 bg-slate-300 px-2 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
+		<div className="group mx-2 mb-8 flex w-[400px] flex-col items-center gap-y-4 rounded-xl border-4 border-slate-300 bg-slate-300 py-2 px-2 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:h-[225px] sm:flex-row sm:px-0 md:mx-8">
 			<Link to={`/blog/${post.slug}`} className="contents">
 				<article className="contents">
 					<div className="flex flex-col justify-center">
 						{post.frontmatter.hero_image ? (
 							<GatsbyImage
-								className="hidden md:inline"
+								className=""
 								image={image}
 								alt={post.frontmatter.title}
 							/>
 						) : null}
 					</div>
-					<div className="flex w-full flex-col justify-evenly px-4">
+					<div className="flex w-full flex-col justify-evenly space-y-4 px-4">
 						<h1 className="text-lg font-bold">
 							{post.frontmatter.title.length > 30
 								? `${post.frontmatter.title.slice(0, 30)}...`

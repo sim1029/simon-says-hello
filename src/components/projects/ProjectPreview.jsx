@@ -42,7 +42,7 @@ const ProjectPreview = ({ project }) => {
 		info.endDate && info.endDate !== "" ? new Date(info.endDate) : null;
 
 	return (
-		<div className="group mb-8 flex h-[250px] min-w-[500px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red md:mr-8">
+		<div className="group mb-8 flex h-[250px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:min-w-[500px] md:mx-8">
 			<Link to={`/projects/${project.slug}`} className="contents">
 				<article className="contents">
 					<div className="flex items-center space-x-4">

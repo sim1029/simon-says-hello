@@ -6,7 +6,7 @@ import React from "react";
 function SpotlightBlog({ post }) {
 	return (
 		<Link to={`/blog/${post.slug}`} className="contents">
-			<div className="group flex flex-col items-center gap-y-8 rounded-xl bg-slate-300 p-8 shadow-md hover:cursor-pointer dark:bg-gray-700 lg:flex-row lg:gap-x-12 lg:p-12">
+			<div className="group mx-2 flex flex-col items-center gap-y-8 rounded-xl bg-slate-300 p-8 shadow-md hover:cursor-pointer dark:bg-gray-700 lg:flex-row lg:gap-x-12 lg:p-12">
 				<div className="flex max-h-96 max-w-prose skew-y-3 flex-col items-center bg-blue dark:bg-red lg:shrink-0">
 					<div className="prose prose-sm max-h-96 max-w-prose translate-x-1 -translate-y-1 overflow-hidden bg-white p-4 transition-transform duration-200 ease-out group-hover:translate-x-3 group-hover:-translate-y-3 lg:shrink-0">
 						<MDXRenderer>{post.body}</MDXRenderer>

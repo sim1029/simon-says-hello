@@ -39,7 +39,7 @@ function TemplateWrapper({ children }) {
 
 	return (
 		<ColorModeProvider value={theme}>
-			<div className="flex min-h-screen min-w-full flex-col justify-between bg-slate-200 p-4 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200">
+			<div className="min-w-screen flex min-h-screen flex-col justify-between bg-slate-200 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200">
 				<Helmet>
 					<html lang="en" />
 					<title>{title}</title>

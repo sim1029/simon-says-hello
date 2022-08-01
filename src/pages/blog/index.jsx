@@ -5,7 +5,7 @@ import Layout from "../../components/layout/Layout";
 function BlogIndexPage() {
 	return (
 		<Layout>
-			<section>
+			<section className="contents">
 				<BlogRoll />
 			</section>
 		</Layout>
