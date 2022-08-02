@@ -53,7 +53,7 @@ const OrganizationTimeline = () => {
 
 	return (
 		<div className="space-y-8">
-			<h1 className="text-4xl font-bold">Organizations Timeline</h1>
+			<h1 className="text-center text-4xl font-bold">Organizations Timeline</h1>
 			<ul className="flex flex-col space-y-12">
 				{orgs.map((org) => {
 					const start = new Date(org.frontmatter.startDate);
@@ -62,7 +62,7 @@ const OrganizationTimeline = () => {
 					return (
 						<li
 							key={org.id}
-							className="flex flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
+							className="mx-2 flex flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
 						>
 							<div className="flex items-center space-x-4 rounded-t-xl bg-blue text-slate-200 dark:bg-red">
 								{info.logo && (

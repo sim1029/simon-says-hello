@@ -42,16 +42,21 @@ function BlogPreviewCard({ post }) {
 							</p>
 							<p>{post.timeToRead} Min</p>
 						</div>
-						<ul className="flex space-x-4 text-sm">
-							{post.frontmatter.tags.map((tag, index) => (
-								<li
-									key={index}
-									className="font-bold underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red"
-								>
-									{tag}
-								</li>
-							))}
-						</ul>
+						{post.frontmatter.tags && post.frontmatter.tags.length > 0 && (
+							<div className="flex items-center gap-x-4 text-sm">
+								<h2 className="text-base font-bold">Tags:</h2>
+								<ul className="contents">
+									{post.frontmatter.tags.map((tag, index) => (
+										<li
+											key={index}
+											className="underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red"
+										>
+											{tag}
+										</li>
+									))}
+								</ul>
+							</div>
+						)}
 					</div>
 				</article>
 			</Link>
