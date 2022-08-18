@@ -18,7 +18,7 @@ function BlogRoll() {
 						hero_image_alt
 						hero_image {
 							childImageSharp {
-								gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 225)
+								gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 150)
 							}
 						}
 					}
@@ -34,7 +34,7 @@ function BlogRoll() {
 	const posts = data.allMdx.nodes;
 
 	return (
-		<div className="flex flex-col gap-y-12 px-4 py-4 md:px-8 lg:px-20 lg:py-10">
+		<div className="flex w-screen flex-col gap-y-12 py-4 lg:py-10">
 			{posts && (
 				<div className="contents">
 					<div className="flex flex-col items-center gap-y-8">
