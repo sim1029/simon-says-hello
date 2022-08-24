@@ -27,7 +27,7 @@ const SkillPreview = ({ skill }) => {
 
 	return (
 		<div className="relative mr-8 mb-8 flex flex-col items-center space-y-4 rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:space-y-6">
-			{info.logo.publicURL && (
+			{info.logo && (
 				<img src={info.logo.publicURL} alt={info.name} className="w-[100px]" />
 			)}
 
