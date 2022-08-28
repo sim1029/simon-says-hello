@@ -18,7 +18,7 @@ const OrganizationTimeline = () => {
 						accomplishments
 						endDate
 						linkedSkills
-						linkedprojects
+						linkedProjects
 						name
 						startDate
 					}

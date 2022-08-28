@@ -64,6 +64,14 @@ module.exports = {
 				extensions: [`.md`, `.mdx`],
 			},
 		},
+		{
+			resolve: "gatsby-plugin-react-svg",
+			options: {
+				rule: {
+					include: /\.inline\.svg$/,
+				},
+			},
+		},
 		"gatsby-plugin-postcss",
 		"gatsby-plugin-netlify", // make sure to keep it last in the array
 	],
