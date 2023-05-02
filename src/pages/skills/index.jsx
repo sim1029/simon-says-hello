@@ -5,7 +5,7 @@ import SkillShelf from "../../components/skills/SkillShelf";
 
 function SkillsPage() {
 	const pageInfo = {
-		description: `😀 Below is my "shelf of skills". Projects and organizations listed on this website have meta tags 🏷. These tags are used to sort and size the skills 💪 you see on the shelf below. Hover over individual skills for more info 👀.`,
+		description: `😀 Below is my "shelf of skills". Projects and organizations listed on this website have meta tags 🏷. These tags are used to sort and size the skill logos 💪 you see on the shelf below.`,
 		title: "⚡️ Skills Page",
 	};
 

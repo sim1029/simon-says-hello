@@ -7,20 +7,22 @@ const Contacts = () => {
 				<h1 className="text-center">💜 Stay in Touch</h1>
 			</div>
 			<p className="w-2/3 text-center text-lg font-normal text-gray-700 dark:text-slate-300 md:text-xl">
-				Sign up for my monthly newsletter and new blog post notifications below
+				{
+					"Message me what's on your mind or get new blog posts sent to your email below"
+				}
 			</p>
 			<div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8">
 				<button
 					type="button"
 					className="w-32 border-[3px] border-solid border-gray-700 py-2 px-4 font-bold hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
 				>
-					Feedback
+					Message
 				</button>
 				<button
 					type="button"
 					className="w-32 bg-blue py-2 px-4 font-bold text-slate-200 hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark "
 				>
-					Newsletter
+					Notifications
 				</button>
 			</div>
 		</div>
