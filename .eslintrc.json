@@ -25,6 +25,8 @@
 		"import/extensions": 0,
 		"import/no-unresolved": 0,
 		"react/jsx-curly-brace-presence": 0,
-		"no-else-return": 0
+		"no-else-return": 0,
+		"react/prop-types": 0,
+		"import/order": 0
 	}
 }

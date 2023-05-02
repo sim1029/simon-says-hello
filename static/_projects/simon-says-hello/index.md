@@ -14,11 +14,11 @@ linkedOrgs:
 linkedSkills:
   - HTML
 ---
-# Hello World
+## Hello World
 
   This is a sample markdown post. 
 
-  ## Do you like it?
+  ### Do you like it?
 
   ```javascript
   const test = () => {

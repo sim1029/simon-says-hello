@@ -3,12 +3,14 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { PropTypes } from "prop-types";
 import * as React from "react";
 import Layout from "../../components/layout/Layout";
+import BackButton from "../../components/layout/BackButton";
 
 const BlogPost = ({ data }) => {
 	return (
 		<Layout>
-			<article className="prose prose-xl self-center dark:prose-invert">
-				<h2>{data.mdx.frontmatter.title}</h2>
+			<article className="prose prose-xl mb-12 self-center dark:prose-invert">
+				<BackButton href={"/blog"} />
+				<h1 className="m-0">{data.mdx.frontmatter.title}</h1>
 				<p>Posted: {data.mdx.frontmatter.date}</p>
 				<MDXRenderer>{data.mdx.body}</MDXRenderer>
 			</article>
