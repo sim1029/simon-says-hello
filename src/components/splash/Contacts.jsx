@@ -1,4 +1,6 @@
 import React from "react";
+import ContactModal from "./ContactModal";
+import NotificationsModal from "./NotificationsModal";
 
 const Contacts = () => {
 	return (
@@ -11,19 +13,12 @@ const Contacts = () => {
 					"Message me what's on your mind or get new blog posts sent to your email below"
 				}
 			</p>
-			<div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8">
-				<button
-					type="button"
-					className="w-32 border-[3px] border-solid border-gray-700 py-2 px-4 font-bold hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
-				>
-					Message
-				</button>
-				<button
-					type="button"
-					className="w-32 bg-blue py-2 px-4 font-bold text-slate-200 hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark "
-				>
-					Notifications
-				</button>
+			<div
+				id="contacts"
+				className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8"
+			>
+				<ContactModal />
+				<NotificationsModal />
 			</div>
 		</div>
 	);

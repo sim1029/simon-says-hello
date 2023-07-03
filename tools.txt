@@ -1,0 +1,7 @@
+pabbly for funciton to send discord msg in server
+Node --v 16.15.0
+`nvm use 16.15.0`
+
+TODO:
+Move sensitive data like webhook links to .env files
+Make site responsive for mobile viewing

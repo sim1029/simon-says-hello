@@ -33,18 +33,25 @@ const SplashHeader = () => {
 				passionate about
 			</p>
 			<div className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8">
-				<button
+				<a
+					href="https://drive.google.com/file/d/1RtEqehEohN2OraEbTcQdDqjfsbwHtEYM/view?usp=sharing"
 					type="button"
-					className="w-24 border-[3px] border-solid border-gray-700 py-2 px-4 font-bold hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
+					target="_blank"
+					className="w-24 border-[3px] border-solid border-gray-700 py-2 px-4 text-center font-bold no-underline hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
+					rel="noreferrer"
 				>
 					CV
-				</button>
-				<button
+				</a>
+				<a
+					href="https://github.com/sim1029"
 					type="button"
-					className="w-24 bg-blue py-2 px-4 font-bold text-slate-200 hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark "
+					target="_blank"
+					className="w-24 bg-blue py-2 px-4
+                     text-center font-bold text-slate-200 no-underline hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark"
+					rel="noreferrer"
 				>
 					Github
-				</button>
+				</a>
 			</div>
 		</div>
 	);

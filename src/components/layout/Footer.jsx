@@ -3,6 +3,12 @@ import { useColorMode } from "../../context/useColorMode";
 import logo from "../../img/logo.png";
 import githubLogoDark from "../../img/social/github-icon-dark.svg";
 import githubLogo from "../../img/social/github-icon.svg";
+import twitterDark from "../../img/social/twitter-dark.png";
+import twitterLight from "../../img/social/twitter-light.png";
+import linkedinDark from "../../img/social/linkedin-dark.png";
+import linkedinLight from "../../img/social/linkedin-light.png";
+import mediumLight from "../../img/social/medium-light.png";
+import mediumDark from "../../img/social/medium-dark.png";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import SocialLinks from "./SocialLinks";
@@ -10,12 +16,23 @@ import SocialLinks from "./SocialLinks";
 function Footer() {
 	const theme = useColorMode();
 	const github = theme === "dark" ? githubLogoDark : githubLogo;
+	const twitter = theme === "dark" ? twitterDark : twitterLight;
+	const linkedin = theme === "dark" ? linkedinDark : linkedinLight;
+	const medium = theme === "dark" ? mediumDark : mediumLight;
 
 	const socialsLinks = [
 		{ alt: "GitHub", src: github, url: "https://github.com/sim1029" },
-		{ alt: "GitHub1", src: github, url: "https://github.com/sim1029" },
-		{ alt: "GitHub2", src: github, url: "https://github.com/sim1029" },
-		{ alt: "GitHub3", src: github, url: "https://github.com/sim1029" },
+		{
+			alt: "Linkedin",
+			src: linkedin,
+			url: "https://www.linkedin.com/in/simonsayshello",
+		},
+		{
+			alt: "Twitter",
+			src: twitter,
+			url: "https://twitter.com/_SimonSchueller",
+		},
+		{ alt: "Medium", src: medium, url: "https://medium.com/@1029simdog" },
 	];
 
 	const navPages = [
@@ -25,8 +42,8 @@ function Footer() {
 	];
 
 	const contact = [
-		["Message", "/"],
-		["Newsletter", "/"],
+		["Message", "/#contacts"],
+		["Notifications", "/#contacts"],
 	];
 
 	const linksStyle =
@@ -89,7 +106,9 @@ function Footer() {
 				</ul>
 			</div>
 
-			<p className="mt-8 mb-4 self-center lg:mt-12">© 2022 Simon Schueller</p>
+			<p className="mt-8 mb-4 self-center lg:mt-12">
+				© {new Date().getFullYear()} Simon Schueller
+			</p>
 		</footer>
 	);
 }
