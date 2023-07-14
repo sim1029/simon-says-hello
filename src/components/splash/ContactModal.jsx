@@ -43,9 +43,10 @@ const ContactModal = () => {
 				// Add your own code here to handle the response as needed
 				closeModal();
 			})
-			.catch(() => {
+			.catch((error) => {
 				// Handle error
-				// console.error("Error:", error);
+				// eslint-disable-next-line no-console
+				console.error("Error:", error);
 				// Add your own code here to handle errors as needed
 			});
 	};
