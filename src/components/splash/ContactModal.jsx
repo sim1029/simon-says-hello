@@ -31,8 +31,7 @@ const ContactModal = () => {
 			mode: "cors",
 			headers: {
 				"Content-Type": "application/json",
-				"x-api-key": process.env.CONTACT_API_KEY,
-				Origin: "https://simon-says-hello.netlify.app/",
+				"x-api-key": process.env.GATSBY_CONTACT_API_KEY,
 			},
 			body: JSON.stringify(data),
 		})
