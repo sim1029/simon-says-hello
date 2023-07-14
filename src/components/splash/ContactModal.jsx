@@ -26,7 +26,7 @@ const ContactModal = () => {
 			message,
 		};
 
-		fetch("https://3j2yibwlqk.execute-api.us-east-1.amazonaws.com/prod-ssh/", {
+		fetch("https://3j2yibwlqk.execute-api.us-east-1.amazonaws.com/prod-ssh", {
 			method: "POST",
 			mode: "cors",
 			credentials: "include",
@@ -36,9 +36,10 @@ const ContactModal = () => {
 			},
 			body: JSON.stringify(data),
 		})
-			.then(() => {
+			.then((response) => {
 				// Handle response
-				// console.log(response);
+				// eslint-disable-next-line no-console
+				console.log(response);
 				// console.log("Form submitted successfully!");
 				// Add your own code here to handle the response as needed
 				closeModal();
