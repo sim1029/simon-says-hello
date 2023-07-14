@@ -26,7 +26,7 @@ const SkillPreview = ({ skill }) => {
 	const startDate = new Date(info.yoe);
 
 	return (
-		<div className="relative mr-8 mb-8 flex flex-col items-center space-y-4 rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:space-y-6">
+		<div className="relative mx-4 mb-8 flex w-full flex-col items-center space-y-4 rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:mr-8 md:ml-0 md:w-64 md:space-y-6">
 			{info.logo && (
 				<img src={info.logo.publicURL} alt={info.name} className="w-[100px]" />
 			)}

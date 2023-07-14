@@ -26,24 +26,26 @@ const ContactModal = () => {
 			message,
 		};
 
-		fetch(
-			"https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NmQwNTZiMDYzNDA0M2M1MjZiNTUzMCI_3D_pc",
-			{
-				method: "POST",
-				mode: "cors",
-				body: JSON.stringify(data),
+		fetch("https://3j2yibwlqk.execute-api.us-east-1.amazonaws.com/prod-ssh/", {
+			method: "POST",
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+				"x-api-key": process.env.CONTACT_API_KEY,
+				Origin: "https://simon-says-hello.netlify.app/",
 			},
-		)
-			.then((response) => {
+			body: JSON.stringify(data),
+		})
+			.then(() => {
 				// Handle response
-				console.log(response);
-				console.log("Form submitted successfully!");
+				// console.log(response);
+				// console.log("Form submitted successfully!");
 				// Add your own code here to handle the response as needed
 				closeModal();
 			})
-			.catch((error) => {
+			.catch(() => {
 				// Handle error
-				console.error("Error:", error);
+				// console.error("Error:", error);
 				// Add your own code here to handle errors as needed
 			});
 	};
@@ -52,7 +54,7 @@ const ContactModal = () => {
 		<div>
 			<button
 				type="button"
-				className="w-32 border-[3px] border-solid border-gray-700 py-2 px-4 font-bold hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
+				className="w-32 border-[3px] border-blue bg-blue py-2 px-4 font-bold text-slate-200 hover:border-blue-dark hover:bg-blue-dark dark:border-red dark:bg-red dark:hover:border-red-dark dark:hover:bg-red-dark"
 				onClick={openModal}
 			>
 				Contact Me

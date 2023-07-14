@@ -1,6 +1,5 @@
 import React from "react";
 import ContactModal from "./ContactModal";
-import NotificationsModal from "./NotificationsModal";
 
 const Contacts = () => {
 	return (
@@ -18,7 +17,6 @@ const Contacts = () => {
 				className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8"
 			>
 				<ContactModal />
-				<NotificationsModal />
 			</div>
 		</div>
 	);

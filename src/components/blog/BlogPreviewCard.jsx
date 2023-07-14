@@ -1,7 +1,5 @@
 // @ts-nocheck
 /* eslint-disable react/no-array-index-key */
-import { BsFillEyeFill } from "@react-icons/all-files/bs/BsFillEyeFill";
-import { BsHeartFill } from "@react-icons/all-files/bs/BsHeartFill";
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
@@ -32,14 +30,6 @@ function BlogPreviewCard({ post }) {
 							{post.frontmatter.date}
 						</p>
 						<div className="flex space-x-4 text-sm text-gray-600 dark:text-slate-400">
-							<p className="flex items-center">
-								<BsFillEyeFill className="mr-1 " />
-								69
-							</p>
-							<p className="flex items-center">
-								<BsHeartFill className="mr-1 fill-red" />
-								69
-							</p>
 							<p>{post.timeToRead} Min</p>
 						</div>
 						{post.frontmatter.tags && post.frontmatter.tags.length > 0 && (

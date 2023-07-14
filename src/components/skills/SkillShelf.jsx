@@ -48,7 +48,7 @@ const SkillShelf = () => {
 	return (
 		<div className="contents">
 			<h1 className="mb-8 text-4xl font-bold">Skill Shelf</h1>
-			<div className="flex flex-1 flex-wrap justify-start md:mx-8">
+			<div className="flex flex-1 flex-wrap justify-center">
 				{sortPosts(data).map((edge, idx) => {
 					const { node } = edge;
 					return (
