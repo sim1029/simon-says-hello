@@ -1,7 +1,7 @@
 ---
 templateKey: skill
 name: CSS
-logo: ../img/css-3.svg
+logo: /img/css-3.svg
 description: TEST
 yoe: 2022-08-21T15:52:36.450Z
 proficiency: 3.5
