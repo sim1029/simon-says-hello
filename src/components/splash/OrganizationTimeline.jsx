@@ -65,13 +65,11 @@ const OrganizationTimeline = () => {
 							className="mx-2 flex flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
 						>
 							<div className="flex items-center space-x-4 rounded-t-xl bg-blue text-slate-200 dark:bg-red">
-								{info.logo && (
-									<GatsbyImage
-										className="flex-shrink-0 rounded-tl-xl"
-										image={getImage(info.logo)}
-										alt={info.name}
-									/>
-								)}
+								<GatsbyImage
+									className="flex-shrink-0 rounded-tl-xl"
+									image={getImage(info.logo)}
+									alt={info.name}
+								/>
 								<div className="flex w-full flex-col">
 									<div className="flex flex-col justify-between sm:flex-row sm:items-center sm:pr-4">
 										<h1 className="sm:text-2xl">{info.name}</h1>
