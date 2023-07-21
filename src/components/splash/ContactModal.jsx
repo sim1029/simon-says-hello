@@ -28,11 +28,8 @@ const ContactModal = () => {
 
 		fetch("https://3j2yibwlqk.execute-api.us-east-1.amazonaws.com/prod-ssh", {
 			method: "POST",
-			mode: "cors",
-			credentials: "include",
 			headers: {
 				"Content-Type": "application/json",
-				"x-api-key": process.env.GATSBY_CONTACT_API_KEY,
 			},
 			body: JSON.stringify(data),
 		})
