@@ -1,7 +1,7 @@
 ---
 templateKey: organization
 name: University of Pittsburgh
-logo: ../img/pitt.png
+logo: /img/pitt.png
 description: Undergraduate Teaching assistant for the university of Pittsburgh
 currentOrg: false
 startDate: 2020-08-01T04:00:00.000Z

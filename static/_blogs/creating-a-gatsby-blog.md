@@ -12,7 +12,7 @@ tags:
   - Gatsby
 ---
 
-![gatsby](../img/gatsby.png)
+![gatsby](/img/gatsby.png)
 
 How do you even make a gatsby blog?
 

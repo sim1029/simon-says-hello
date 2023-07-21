@@ -1,7 +1,7 @@
 ---
 templateKey: organization
 name: Capital One
-logo: ../img/cap_one_mobile.png
+logo: /img/cap_one_mobile.png
 description: Summer Software Engineering Internship through Capital One's TIP program
 currentOrg: false
 startDate: 2022-06-06T23:47:40.461Z
