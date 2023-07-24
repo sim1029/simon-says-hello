@@ -1,7 +1,7 @@
 ---
 templateKey: project
 title: simon-says-hello
-logo: /img/logo.png
+logo: ../img/logo.png
 description: Personal website to showcase projects, skills, and my blog!
 status: in progress
 featuredProject: true

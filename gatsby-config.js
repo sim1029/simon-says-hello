@@ -58,18 +58,10 @@ module.exports = {
 			options: {
 				plugins: [
 					// gatsby-remark-relative-images must go before gatsby-remark-images
-					{
-						resolve: `gatsby-remark-relative-images-v2`,
-					},
+					`gatsby-remark-relative-images`,
 					{
 						resolve: `gatsby-remark-images`,
 						options: { maxWidth: 1024 },
-					},
-					{
-						resolve: `gatsby-remark-copy-linked-files`,
-						options: {
-							destinationDir: `${__dirname}/static`,
-						},
 					},
 				],
 			},
