@@ -70,6 +70,12 @@ module.exports = {
 						resolve: `gatsby-remark-images`,
 						options: { maxWidth: 1024 },
 					},
+					{
+						resolve: `gatsby-remark-copy-linked-files`,
+						options: {
+							destinationDir: `${__dirname}/static`,
+						},
+					},
 				],
 			},
 		},
