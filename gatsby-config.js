@@ -59,12 +59,7 @@ module.exports = {
 				plugins: [
 					// gatsby-remark-relative-images must go before gatsby-remark-images
 					{
-						resolve: `gatsby-remark-relative-images`,
-						options: {
-							// [Optional] The root of "media_folder" in your config.yml
-							// Defaults to "static"
-							staticFolderName: "static",
-						},
+						resolve: `gatsby-remark-relative-images-v2`,
 					},
 					{
 						resolve: `gatsby-remark-images`,
