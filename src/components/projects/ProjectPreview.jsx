@@ -5,9 +5,9 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import React from "react";
 import { useColorMode } from "../../context/useColorMode";
-import githubDarkLogo from "../../img/social/github-icon-dark.svg";
-import githubLogo from "../../img/social/github-icon.svg";
-import liveLink from "../../img/svg/link.svg";
+import githubDarkLogo from "../../images/social/github-icon-dark.svg";
+import githubLogo from "../../images/social/github-icon.svg";
+import liveLink from "../../images/svg/link.svg";
 
 const ProjectPreview = ({ project }) => {
 	const theme = useColorMode();

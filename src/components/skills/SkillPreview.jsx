@@ -1,9 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import PropTypes from "prop-types";
 import React from "react";
-import HalfStar from "../../../static/img/star-half.inline.svg";
-import OutlineStar from "../../../static/img/star-outline.inline.svg";
-import FilledStar from "../../../static/img/star.inline.svg";
+import HalfStar from "../../images/star-half.inline.svg";
+import OutlineStar from "../../images/star-outline.inline.svg";
+import FilledStar from "../../images/star.inline.svg";
 
 const SkillPreview = ({ skill }) => {
 	const info = skill.frontmatter;

@@ -65,11 +65,13 @@ const OrganizationTimeline = () => {
 							className="mx-2 flex flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
 						>
 							<div className="flex items-center space-x-4 rounded-t-xl bg-blue text-slate-200 dark:bg-red">
-								<GatsbyImage
-									className="flex-shrink-0 rounded-tl-xl"
-									image={getImage(info.logo)}
-									alt={info.name}
-								/>
+								{info.logo && (
+									<GatsbyImage
+										className="flex-shrink-0 rounded-tl-xl"
+										image={getImage(info.logo)}
+										alt={info.name}
+									/>
+								)}
 								<div className="flex w-full flex-col">
 									<div className="flex flex-col justify-between sm:flex-row sm:items-center sm:pr-4">
 										<h1 className="sm:text-2xl">{info.name}</h1>
@@ -96,8 +98,10 @@ const OrganizationTimeline = () => {
 									<div className="flex flex-col">
 										<h2 className="text-lg font-bold">Major Accomplishments</h2>
 										<ul className="list-disc">
-											{info.accomplishments.map((accomplishment) => (
-												<li className="ml-4">{accomplishment}</li>
+											{info.accomplishments.map((accomplishment, index) => (
+												<li className="ml-4" key={index}>
+													{accomplishment}
+												</li>
 											))}
 										</ul>
 									</div>
@@ -106,8 +110,11 @@ const OrganizationTimeline = () => {
 									<div className="flex flex-col">
 										<h2 className="text-lg font-bold">Skills</h2>
 										<ul className="flex space-x-4">
-											{info.linkedSkills.map((skill) => (
-												<li className="underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red">
+											{info.linkedSkills.map((skill, index) => (
+												<li
+													key={index}
+													className="underline decoration-blue decoration-solid decoration-[3px] underline-offset-2 dark:border-red dark:decoration-red"
+												>
 													{skill}
 												</li>
 											))}
