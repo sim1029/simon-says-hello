@@ -1,17 +1,24 @@
 ---
 templateKey: organization
-name: Capital One
+name: Capital One (Mclean, VA)
 logo: ../img/cap_one_mobile.png
-description: Summer Software Engineering Internship through Capital One's TIP program
+description: >-
+  + Full stack web development (Typescript, React, Node, AWS)
+
+  + Invented tool for associates to create Capital One branded digital content.
+
+  + Crafted CMS and hosting for user creations
+
+  + Saved 100s of hours for designers and users by rendering jobs programmatically, in minutes.
 currentOrg: false
 startDate: 2022-06-06T23:47:40.461Z
 endDate: 2022-08-12T04:00:00.000Z
-role: Full stack developer for Associate Experience Technology
+role: Technology Internship Program
 roleDescription: In this role I created a full stack SPA from scratch to create
-  custom promotional videos for associates on request.
-accomplishments:
-  - AWS Certification
+  custom promotional videos for associates on a self-service basis. Additionally
+  learned how to develop applications and scale them at the enterprise level
+accomplishments: []
 linkedProjects: []
 linkedSkills:
-  - HTML
+  - CSS
 ---
