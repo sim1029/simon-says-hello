@@ -57,7 +57,7 @@ collections:
           default: "skill",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Logo", name: "logo", widget: "image", media_folder: "../img" }
       - { label: "Description", name: "description", widget: "text" }
       - {
           label: "First Used",
