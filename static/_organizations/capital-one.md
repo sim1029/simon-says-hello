@@ -1,6 +1,6 @@
 ---
 templateKey: organization
-name: Capital One
+name: Capital One (Mclean, VA)
 logo: ../img/cap_one_mobile.png
 description: >-
   + Full stack web development (Typescript, React, Node, AWS)
