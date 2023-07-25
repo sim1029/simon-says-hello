@@ -77,6 +77,7 @@ function TemplateWrapper({ children }) {
 						property="og:image"
 						content={`${withPrefix("/")}images/og-image.jpg`}
 					/>
+					<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" />
 				</Helmet>
 				<Navbar themeToggle={toggleDarkMode} />
 				{children}

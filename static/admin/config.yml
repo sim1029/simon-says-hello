@@ -1,7 +1,6 @@
 backend:
-  name: proxy
-  proxy_url: http://localhost:8081/api/v1
-  branch: master # optional, defaults to master
+  name: git-gateway
+  branch: cms # optional, defaults to master
   # name: git-gateway
   # branch: master
   commit_messages:
@@ -11,7 +10,6 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
-local_backend: true
 media_folder: static/img
 public_folder: /img
 publish_mode: editorial_workflow
