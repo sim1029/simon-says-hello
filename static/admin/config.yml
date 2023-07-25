@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: cms # optional, defaults to master
+  branch: main # optional, defaults to master
   # name: git-gateway
   # branch: master
   commit_messages:
