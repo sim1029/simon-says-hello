@@ -14,8 +14,6 @@ const OrganizationTimeline = () => {
 								gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 100)
 							}
 						}
-						roleDescription
-						accomplishments
 						endDate
 						linkedSkills
 						linkedProjects
@@ -90,22 +88,6 @@ const OrganizationTimeline = () => {
 									<h2 className="text-lg font-bold">Description</h2>
 									<p>{info.description}</p>
 								</div>
-								<div className="flex flex-col">
-									<h2 className="text-lg font-bold">My Role</h2>
-									<p>{info.roleDescription}</p>
-								</div>
-								{info.accomplishments && info.accomplishments.length > 0 && (
-									<div className="flex flex-col">
-										<h2 className="text-lg font-bold">Major Accomplishments</h2>
-										<ul className="list-disc">
-											{info.accomplishments.map((accomplishment, index) => (
-												<li className="ml-4" key={index}>
-													{accomplishment}
-												</li>
-											))}
-										</ul>
-									</div>
-								)}
 								{info.linkedSkills && info.linkedSkills.length > 0 && (
 									<div className="flex flex-col">
 										<h2 className="text-lg font-bold">Skills</h2>
