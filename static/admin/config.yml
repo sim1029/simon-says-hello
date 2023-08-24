@@ -236,6 +236,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - {
           label: "Current Organization",
@@ -261,14 +262,6 @@ collections:
           required: false,
         }
       - { label: "Role", name: "role", widget: "string" }
-      - { label: "Role Description", name: "roleDescription", widget: "text" }
-      - {
-          label: "Accomplishments",
-          name: "accomplishments",
-          widget: "list",
-          field:
-            { label: "Accomplishment", name: "accomplishment", widget: "text" },
-        }
       - {
           label: "Linked Projects",
           name: "linkedProjects",
