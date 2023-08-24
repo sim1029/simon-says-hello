@@ -57,12 +57,7 @@ collections:
           default: "skill",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - {
-          label: "Logo",
-          name: "logo",
-          widget: "image",
-          media_folder: "static/img",
-        }
+      - { label: "Logo", name: "logo", widget: "image" }
       - {
           label: "Description",
           name: "description",
@@ -135,7 +130,6 @@ collections:
     folder: "static/_projects"
     slug: "{{slug}}"
     path: "{{slug}}/index"
-    media_folder: "static/img"
     public_folder: ""
     editor:
       preview: false
@@ -242,7 +236,7 @@ collections:
           label: "Current Organization",
           name: "currentOrg",
           widget: "boolean",
-          required: true,
+          required: false,
         }
       - {
           label: "Start Date",
