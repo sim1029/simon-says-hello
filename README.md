@@ -5,7 +5,3 @@
 This repo contains Simon's portfolio and SWE blogging website [Gatsby](https://www.gatsbyjs.org/), and [Netlify CMS](https://www.netlifycms.org): **[Demo Link](https://gatsby-netlify-cms.netlify.com/)**.
 
 It follows the [JAMstack architecture](https://jamstack.org) by using Git as a single source of truth, and [Netlify](https://www.netlify.com) for continuous deployment, and CDN distribution.
-
-
-## External Tools
-Utilizing [Pably Connect](https://connect.pabbly.com/) to submit contact form and add mailchimp email
