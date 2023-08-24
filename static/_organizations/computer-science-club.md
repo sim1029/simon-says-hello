@@ -1,7 +1,7 @@
 ---
 templateKey: organization
 name: Computer Science Club
-logo: /img/csc.png
+logo: ../img/csc.png
 location: Pittsburgh, PA
 description: |-
   + Lead for Pitt Computer Science Club's flagship program "Zero to Offer"

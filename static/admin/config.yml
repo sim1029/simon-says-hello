@@ -31,7 +31,12 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
-      - { label: "Thumbnail", name: "hero_image", widget: image }
+      - {
+          label: "Thumbnail",
+          name: "hero_image",
+          widget: image,
+          media_folder: "../img",
+        }
       - {
           label: "Thumbnail alt text",
           name: "hero_image_alt",
@@ -57,7 +62,7 @@ collections:
           default: "skill",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Logo", name: "logo", widget: "image", media_folder: "../img" }
       - {
           label: "Description",
           name: "description",
@@ -142,7 +147,7 @@ collections:
           default: "project",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Logo", name: "logo", widget: "image", media_folder: "../img" }
       - { label: "Description", name: "description", widget: "text" }
       - {
           label: "Status",
@@ -229,7 +234,7 @@ collections:
           default: "organization",
         }
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Logo", name: "logo", widget: "image" }
+      - { label: "Logo", name: "logo", widget: "image", media_folder: "../img" }
       - { label: "Location", name: "location", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - {

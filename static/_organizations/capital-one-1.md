@@ -1,7 +1,7 @@
 ---
 templateKey: organization
 name: Capital One
-logo: /img/cap_one_mobile.png
+logo: ../img/cap_one_mobile.png
 location: New York, NY
 description: >-
   + Enterprise Data and Machine Learning (Python, Kafka, AWS)
