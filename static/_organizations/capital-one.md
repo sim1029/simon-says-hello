@@ -25,4 +25,5 @@ linkedSkills:
   - React.js
   - HTML
   - CSS
+  - TypeScript
 ---
