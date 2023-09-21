@@ -178,7 +178,54 @@ collections:
           date_format: "MM.YYYY",
           required: false,
         }
-      - { label: "Project Journal", name: "body", widget: "markdown" }
+      - {
+          label: "Project Journal",
+          name: "body",
+          widget: "markdown",
+          default: "# Project Title
+
+            ## **Description**
+
+            Brief overview of the project and its purpose.
+
+            ## **Role**
+
+            Your role in the project (e.g., Developer, Team Lead, etc.)
+
+            ## **Skills Utilized**
+
+            List of technologies, languages, tools, and methodologies used in the project.
+
+            ## **Contribution**
+
+            Describe your specific contributions to the project. What challenges did you face and overcome? What unique solutions did you provide?
+
+            ## **Outcome**
+
+            Highlight the results and impact of the project. Did it meet its objectives? Any metrics or statistics to share?
+
+            ## **Key Takeaways**
+
+            Mention the lessons you learned from the project, both technical and non-technical.
+
+            ### Screenshots / Visuals (if applicable)
+
+            ![Screenshot 1](link-to-screenshot-1)
+            *Caption for Screenshot 1*
+
+            ![Screenshot 2](link-to-screenshot-2)
+            *Caption for Screenshot 2*
+
+            ### Code Snippets / Examples (if applicable)
+
+            ```python
+
+            ```
+
+            ### Further Information
+
+            If you're interested in more details about this project, feel free to [contact me](mailto:your@email.com) or visit the [GitHub repository](https://chat.openai.com/link-to-github-repo) for the project.",
+        }
       - {
           label: "Repository URL",
           name: "repository",

@@ -1,11 +1,7 @@
 ---
 templateKey: organization
 name: Federated Hermes
-<<<<<<< HEAD
-logo: ../img/federated.png
-=======
 logo: ../img/federated-white-back.jpg
->>>>>>> 6399769c988a380dad4751cc6a8e1bb1b7c6e58b
 location: Pittsburgh, PA
 description: |-
   + Pioneered a vendor performance evaluation system
