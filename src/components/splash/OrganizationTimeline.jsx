@@ -26,6 +26,11 @@ const OrganizationTimeline = () => {
 		}
 	`);
 
+	// function to split string into list based on newline character and replace "+" character with 👉 emoji
+	const splitAndReplace = (str) => {
+		return str.split("\n").map((item) => item.replace("+", "👉"));
+	};
+
 	const padTo2Digits = (num) => {
 		return num.toString().padStart(2, "0");
 	};
@@ -49,10 +54,21 @@ const OrganizationTimeline = () => {
 
 	const orgs = data.allMdx.nodes;
 
+	// sort orgs by end date
+	orgs.sort((a, b) => {
+		if (a.frontmatter.endDate < b.frontmatter.endDate) {
+			return 1;
+		}
+		if (a.frontmatter.endDate > b.frontmatter.endDate) {
+			return -1;
+		}
+		return 0;
+	});
+
 	return (
-		<div className="space-y-8">
+		<div className="flex flex-col items-center space-y-8">
 			<h1 className="text-center text-4xl font-bold">Organizations Timeline</h1>
-			<ul className="flex flex-col space-y-12">
+			<ul className="flex w-[90%] flex-col items-center space-y-12 lg:w-[100%]">
 				{orgs.map((org) => {
 					const start = new Date(org.frontmatter.startDate);
 					const end = new Date(org.frontmatter.endDate);
@@ -60,7 +76,7 @@ const OrganizationTimeline = () => {
 					return (
 						<li
 							key={org.id}
-							className="mx-2 flex flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
+							className="mx-2 flex w-full flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
 						>
 							<div className="flex items-center space-x-4 rounded-t-xl bg-blue text-slate-200 dark:bg-red">
 								{info.logo && (
@@ -84,9 +100,12 @@ const OrganizationTimeline = () => {
 								</div>
 							</div>
 							<div className="flex flex-col space-y-4 p-4">
-								<div className="flex flex-col">
-									<h2 className="text-lg font-bold">Description</h2>
-									<p>{info.description}</p>
+								<div className="flex flex-col space-y-4">
+									{splitAndReplace(info.description).map((point, index) => (
+										<p key={index} className="text-lg">
+											{point}
+										</p>
+									))}
 								</div>
 								{info.linkedSkills && info.linkedSkills.length > 0 && (
 									<div className="flex flex-col">

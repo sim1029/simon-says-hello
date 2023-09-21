@@ -41,10 +41,7 @@ function Footer() {
 		["Blog", "/blog"],
 	];
 
-	const contact = [
-		["Message", "/#contacts"],
-		["Notifications", "/#contacts"],
-	];
+	const contact = [["Message", "/#contacts"]];
 
 	const linksStyle =
 		"text-xl lg:text-lg decoration-blue decoration-2 underline-offset-4 hover:underline dark:decoration-red dark:text-slate-300 text-gray-600 text-center";
@@ -90,12 +87,6 @@ function Footer() {
 					</li>
 					<NavLinks linkStyles={linksStyle} navPages={navPages} />
 				</ul>
-				<ul className="space-y-4">
-					<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">
-						Contact
-					</li>
-					<NavLinks linkStyles={linksStyle} navPages={contact} />
-				</ul>
 				<ul className="flex flex-col items-center space-y-4">
 					<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">
 						Socials
@@ -106,7 +97,7 @@ function Footer() {
 				</ul>
 			</div>
 
-			<p className="mt-8 mb-4 self-center lg:mt-12">
+			<p className="mb-4 mt-8 self-center lg:mt-12">
 				© {new Date().getFullYear()} Simon Schueller
 			</p>
 		</footer>
