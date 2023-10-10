@@ -4,7 +4,7 @@ name: Capital One
 logo: ../img/cap_one_mobile.png
 location: Mclean, VA
 description: >-
-  + Full stack web development (Typescript, React, Node, AWS)
+  + Full stack web development
 
   + Invented tool for associates to create Capital One branded digital content
 
@@ -20,7 +20,5 @@ linkedProjects: []
 linkedSkills:
   - AWS
   - React.js
-  - HTML
-  - CSS
   - TypeScript
 ---

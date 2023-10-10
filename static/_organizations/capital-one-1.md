@@ -4,7 +4,7 @@ name: Capital One
 logo: ../img/cap_one_mobile.png
 location: New York, NY
 description: >-
-  + Enterprise Data and Machine Learning (Python, Kafka, AWS)
+  + Enterprise Data and Machine Learning
 
   + Won first place in hackathon with 500+ interns by creating AI powered slack message summarizer  
 
@@ -20,4 +20,8 @@ currentOrg: false
 startDate: 2023-06-24T04:00:00.000Z
 endDate: 2023-08-24T04:00:00.000Z
 role: Software Engineering Intern
+linkedSkills:
+  - AWS
+  - Python
+  - Kafka
 ---

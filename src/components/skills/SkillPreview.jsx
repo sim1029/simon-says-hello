@@ -26,7 +26,9 @@ const SkillPreview = ({ skill }) => {
 	const startDate = new Date(info.yoe);
 
 	return (
-		<div className="relative mx-4 mb-8 flex w-full flex-col items-center space-y-4 rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:mr-8 md:ml-0 md:w-64 md:space-y-6">
+		<div className="relative mx-4 mb-8 flex w-full flex-col items-center justify-evenly rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:ml-0 md:mr-8 md:w-64 md:space-y-6">
+			<h1 className="text-2xl font-bold">{info.name}</h1>
+
 			{info.logo && (
 				<img src={info.logo.publicURL} alt={info.name} className="w-[100px]" />
 			)}
@@ -42,27 +44,6 @@ const SkillPreview = ({ skill }) => {
 						return <FilledStar key={`${info.name}-${x}`} className="w-6" />;
 					return <OutlineStar key={`${info.name}-${x}`} className="w-6" />;
 				})}
-			</div>
-
-			<div className="flex items-center space-x-2 text-sm text-slate-200">
-				{info.linkedOrgs && info.linkedOrgs.length > 0 && (
-					<p className="rounded-lg bg-blue p-2 text-center dark:bg-red">
-						{info.linkedOrgs.length} Org
-						{info.linkedOrgs.length > 1 ? "s" : ""}
-					</p>
-				)}
-				{info.linkedProjects && info.linkedProjects.length > 0 && (
-					<p className="rounded-lg bg-blue p-2 text-center dark:bg-red">
-						{info.linkedProjects.length} Proj
-						{info.linkedProjects.length > 1 ? "s" : ""}
-					</p>
-				)}
-				{info.linkedSkills && info.linkedSkills.length > 0 && (
-					<p className="rounded-lg bg-blue p-2 text-center dark:bg-red">
-						{info.linkedSkills.length} Skill
-						{info.linkedSkills.length > 1 ? "s" : ""}
-					</p>
-				)}
 			</div>
 		</div>
 	);

@@ -1,6 +1,6 @@
 ---
 templateKey: organization
-name: Computer Science Club
+name: Pitt Computer Science Club
 logo: ../img/csc.png
 location: Pittsburgh, PA
 description: |-
@@ -11,4 +11,8 @@ currentOrg: false
 startDate: 2022-05-24T04:00:00.000Z
 endDate: 2023-05-24T04:00:00.000Z
 role: Club Officer
+linkedProjects: []
+linkedSkills:
+  - Gatsby.js
+  - Github
 ---

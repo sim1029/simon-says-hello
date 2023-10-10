@@ -8,13 +8,11 @@ const Contacts = () => {
 				<h1 className="text-center">💜 Stay in Touch</h1>
 			</div>
 			<p className="w-2/3 text-center text-lg font-normal text-gray-700 dark:text-slate-300 md:text-xl">
-				{
-					"Message me what's on your mind or get new blog posts sent to your email below"
-				}
+				{"Message me what's on your mind"}
 			</p>
 			<div
 				id="contacts"
-				className="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-8"
+				className="flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0"
 			>
 				<ContactModal />
 			</div>

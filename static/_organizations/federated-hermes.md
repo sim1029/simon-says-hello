@@ -12,5 +12,6 @@ currentOrg: false
 startDate: 2021-05-24T04:00:00.000Z
 endDate: 2021-08-24T04:00:00.000Z
 role: Software Engineering Intern
-linkedSkills: []
+linkedSkills: 
+ - SQL
 ---

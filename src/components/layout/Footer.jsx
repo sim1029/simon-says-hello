@@ -41,8 +41,6 @@ function Footer() {
 		["Blog", "/blog"],
 	];
 
-	const contact = [["Message", "/#contacts"]];
-
 	const linksStyle =
 		"text-xl lg:text-lg decoration-blue decoration-2 underline-offset-4 hover:underline dark:decoration-red dark:text-slate-300 text-gray-600 text-center";
 
@@ -68,26 +66,20 @@ function Footer() {
 							navPages={navPages}
 						/>
 					</ul>
-					<ul className="space-y-4">
-						<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">
-							Contact
-						</li>
-						<NavLinks linkStyles={linksStyle} navPages={contact} />
-					</ul>
 				</div>
 			</div>
 
-			<div className="mb-8 hidden justify-evenly text-center lg:flex">
-				<a href="/">
+			<div className="mb-8 hidden justify-around text-center lg:flex">
+				<a href="/" className="flex w-1/5 justify-center">
 					<img src={logo} alt="logo" className="h-20 w-20" />
 				</a>
-				<ul className="space-y-4">
+				<ul className="w-1/5 space-y-4">
 					<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">
 						Pages
 					</li>
 					<NavLinks linkStyles={linksStyle} navPages={navPages} />
 				</ul>
-				<ul className="flex flex-col items-center space-y-4">
+				<ul className="flex w-1/5 flex-col items-center space-y-4">
 					<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">
 						Socials
 					</li>
