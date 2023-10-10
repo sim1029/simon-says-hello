@@ -48,7 +48,7 @@ As team lead for this project, I managed delegation of tasks and ensured that al
 
 ## **Outcome**
 
-\-﻿ Received A+ in CS1699 Course
+-﻿ Received A+ in CS1699 Course
 -﻿ Working project demo hosted publicly [Site](https://choose-my-professor.netlify.app/)
 
 ## **Key Takeaways**
