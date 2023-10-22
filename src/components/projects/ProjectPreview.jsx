@@ -4,15 +4,8 @@ import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import PropTypes from "prop-types";
 import React from "react";
-import { useColorMode } from "../../context/useColorMode";
-import githubDarkLogo from "../../images/social/github-icon-dark.svg";
-import githubLogo from "../../images/social/github-icon.svg";
-import liveLink from "../../images/svg/link.svg";
 
 const ProjectPreview = ({ project }) => {
-	const theme = useColorMode();
-	const githubIcon = theme === "dark" ? githubDarkLogo : githubLogo;
-
 	const info = project.frontmatter;
 	const image = getImage(info.logo);
 	const padTo2Digits = (num) => {
@@ -45,13 +38,17 @@ const ProjectPreview = ({ project }) => {
 		<Link to={`/projects/${project.slug}`} className="contents">
 			<div className="group mx-4 mb-8 flex h-[250px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:-translate-y-3 hover:translate-x-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:min-w-[500px] md:mx-8">
 				<article className="contents">
-					{Boolean(image) && (
-						<GatsbyImage
-							className="hidden md:inline"
-							image={image}
-							alt={info.title}
-						/>
-					)}
+					<div className="flex space-x-4">
+						{Boolean(image) && (
+							<GatsbyImage
+								className="hidden md:inline"
+								image={image}
+								alt={info.title}
+							/>
+						)}
+						<h2 className="text-3xl font-bold">{info.title}</h2>
+					</div>
+
 					<div className="flex justify-between">
 						<h2 className="">
 							{formatDate(start)}
@@ -64,18 +61,6 @@ const ProjectPreview = ({ project }) => {
 						</h2>
 					</div>
 					<p>{info.description.slice(0, 70)}</p>
-					<div className="flex space-x-6">
-						{info.repository && (
-							<a href={info.repository}>
-								<img src={githubIcon} alt="github" className="w-10" />
-							</a>
-						)}
-						{info.demo && (
-							<a href={info.demo}>
-								<img src={liveLink} alt="Active Project" className="w-10" />
-							</a>
-						)}
-					</div>
 					<ul className="flex items-center space-x-4 text-sm">
 						{Boolean(info.linkedSkills) && (
 							<>

@@ -31,16 +31,16 @@ I had a vision for Choose My Professor as a part of a semester long practical AI
 
 ## **Skills Utilized**
 
-\-﻿ NLP
--﻿ Python
--﻿ nltk
--﻿ Flask
--﻿ AWS
--﻿ javascript
--﻿ React
--﻿ Github
--﻿ Netlify
--﻿ Selenium
+- NLP
+- Python
+- nltk
+- Flask
+- AWS
+- javascript
+- React
+- Github
+- Netlify
+- Selenium
 
 ## **Contribution**
 
@@ -48,8 +48,8 @@ As team lead for this project, I managed delegation of tasks and ensured that al
 
 ## **Outcome**
 
--﻿ Received A+ in CS1699 Course
--﻿ Working project demo hosted publicly [Site](https://choose-my-professor.netlify.app/)
+- Received A+ in CS1699 Course
+- Working project demo hosted publicly [Site](https://choose-my-professor.netlify.app/)
 
 ## **Key Takeaways**
 
@@ -59,10 +59,15 @@ A﻿nother key learning from this project came when observing the cold starts th
 
 ### Screenshots / Visuals (if applicable)
 
-![CMP Splash](cmp-splash-ss.png "Splash Page")
+Splash Page
+
+![CMP Splash](cmp-splash-ss.png "Splash Screen")
+
+Example Search Results
 
 ![CMP Results](cmp-results-ss.png "Search Results")
 
+Example tags for professors
 ![CMP Tags](cmp-tags-ss.png "Search Tags")
 
 ### Further Information
