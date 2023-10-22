@@ -41,7 +41,7 @@ P﻿izza Buddy allowed me to effectively group customer orders to deliver pizza 
 
 L﻿et the problem you wish to solve drive which technologies you learn/use in a project. If all you have is a hammer, everything looks like a nail.
 
-### Screenshots / Visuals (if applicable)
+## S﻿creenshots
 
 W﻿elcome Screen
 
@@ -81,6 +81,6 @@ P﻿ast Shifts
 
 ![](pb-shifts-2.png)
 
-### Further Information
+## Further Information
 
 T﻿his project is archived and was never released to the Appstore on account of their $100 charge for developers per year. However I did use a prototype version during my shifts as a driver and it was awesome
