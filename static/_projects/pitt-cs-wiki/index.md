@@ -1,7 +1,7 @@
 ---
 templateKey: project
 title: Pitt CS Wiki
-logo: ../img/cs-wiki.svg
+logo: ../img/pitt-cs-wiki.png
 description: Collection of guides and resources to help CS students navigate the
   college experience
 status: in progress
