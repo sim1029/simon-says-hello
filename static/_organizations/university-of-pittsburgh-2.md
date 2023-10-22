@@ -3,7 +3,7 @@ templateKey: organization
 name: University of Pittsburgh
 logo: ../img/pitt-logo.jpeg
 location: Pittsburgh, PA
-description: |
+description: |-
   + Completed M.S Computer Science degree in one year (BS + MS = 4 years)
   + Specialization in AI/ML
 startDate: 2022-08-21T04:00:00.000Z
