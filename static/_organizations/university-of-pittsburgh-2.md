@@ -8,7 +8,7 @@ description: |
   + Specialization in AI/ML
 startDate: 2022-08-21T04:00:00.000Z
 endDate: 2024-05-21T04:00:00.000Z
-role: M.S in Computer Science
+role: MS in Computer Science
 linkedSkills:
   - C
   - Python
