@@ -43,22 +43,15 @@ const ProjectPreview = ({ project }) => {
 
 	return (
 		<Link to={`/projects/${project.slug}`} className="contents">
-			<div className="group mx-4 mb-8 flex h-[250px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:translate-x-3 hover:-translate-y-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:min-w-[500px] md:mx-8">
+			<div className="group mx-4 mb-8 flex h-[250px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:-translate-y-3 hover:translate-x-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:min-w-[500px] md:mx-8">
 				<article className="contents">
-					<div className="flex flex-wrap items-center md:space-x-4">
-						{Boolean(image) && (
-							<GatsbyImage
-								className="hidden md:inline"
-								image={image}
-								alt={info.title}
-							/>
-						)}
-						<h1 className="mr-4 text-2xl font-bold">
-							{info.title.length > 30
-								? `${info.title.slice(0, 30)}...`
-								: info.title}
-						</h1>
-					</div>
+					{Boolean(image) && (
+						<GatsbyImage
+							className="hidden md:inline"
+							image={image}
+							alt={info.title}
+						/>
+					)}
 					<div className="flex justify-between">
 						<h2 className="">
 							{formatDate(start)}

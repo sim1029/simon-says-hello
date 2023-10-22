@@ -86,48 +86,6 @@ collections:
           step: 0.5,
           value_type: "float",
         }
-      - {
-          label: "Linked Projects",
-          name: "linkedProjects",
-          widget: "list",
-          field:
-            {
-              label: "Linked Project",
-              name: "linkedProject",
-              widget: "relation",
-              collection: "projects",
-              value_field: "title",
-              search_fields: ["title"],
-            },
-        }
-      - {
-          label: "Linked Organizations",
-          name: "linkedOrgs",
-          widget: "list",
-          field:
-            {
-              label: "Linked Organization",
-              name: "linkedOrg",
-              widget: "relation",
-              collection: "organizations",
-              value_field: "name",
-              search_fields: ["name"],
-            },
-        }
-      - {
-          label: "Linked Skills",
-          name: "linkedSkills",
-          widget: "list",
-          field:
-            {
-              label: "Linked Skill",
-              name: "linkedSkill",
-              widget: "relation",
-              collection: "skills",
-              value_field: "name",
-              search_fields: ["name", "linkedskills.*.linkedskill"],
-            },
-        }
 
   - name: "projects"
     label: "Projects"
@@ -135,7 +93,6 @@ collections:
     folder: "static/_projects"
     slug: "{{slug}}"
     path: "{{slug}}/index"
-    public_folder: ""
     editor:
       preview: false
     create: true
