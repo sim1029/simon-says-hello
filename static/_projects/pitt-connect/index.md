@@ -41,7 +41,7 @@ C﻿heck out our hillarious demo video: [Demo Video](https://www.youtube.com/wat
 
 W﻿hen you work on something you are passionate about or with people you enjoy it really does not feel like work.
 
-### Screenshots / Visuals (if applicable)
+## Screenshots
 
 H﻿ome Screen
 
