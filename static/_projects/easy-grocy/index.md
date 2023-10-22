@@ -54,4 +54,4 @@ T﻿rying to build a generalized application which will work accross platforms i
 
 * [API Docs](https://github.com/sim1029/EasyGrocy/blob/main/backend/api.md)
 * [Devpost Submission](https://devpost.com/software/easy-grocy)
-*﻿ [Github Repo](https://github.com/sim1029/EasyGrocy?tab=readme-ov-file)
+* [Github Repo](https://github.com/sim1029/EasyGrocy?tab=readme-ov-file)
