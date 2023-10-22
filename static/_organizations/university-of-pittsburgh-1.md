@@ -9,7 +9,7 @@ description: |-
   + Achieved joint degree with the Frederic Honors College
 startDate: 2020-08-21T04:00:00.000Z
 endDate: 2023-05-21T04:00:00.000Z
-role: BS degree in Computer Science
+role: BS in Computer Science
 linkedSkills:
   - C
   - Java
