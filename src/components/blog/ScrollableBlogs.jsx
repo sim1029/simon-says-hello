@@ -15,10 +15,12 @@ const ScrollableBlogs = ({ posts }) => {
 	}, [page, setPage]);
 
 	return (
-		<div className="flex flex-1 flex-wrap justify-center">
-			{posts.slice(page * 4, page * 4 + 4).map((post) => {
-				return <BlogPreviewCard post={post} key={post.id} />;
-			})}
+		<div className="flex flex-col space-y-8">
+			<div className="mx-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
+				{posts.slice(page * 4, page * 4 + 4).map((post) => {
+					return <BlogPreviewCard post={post} key={post.id} />;
+				})}
+			</div>
 			<PaginationScroll
 				handleLeftClick={handleLeftClick}
 				handleRightClick={handleRightClick}

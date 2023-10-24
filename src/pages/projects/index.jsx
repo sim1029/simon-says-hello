@@ -15,7 +15,7 @@ const ProjectsPage = () => {
 
 	return (
 		<Layout>
-			<div className="flex h-full w-full flex-col items-center justify-center">
+			<div className="flex h-full w-full flex-col items-center justify-center self-center sm:w-3/4">
 				<PageHeader pageInfo={pageInfo} />
 				<FeaturedProjects />
 				<ProjectArchive />
