@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Another One Bites the Dust
-date: 2023-10-24T03:03:24.592Z
+date: 2023-05-10T03:03:24.592Z
 description: "Leadership in the Himalayas post #4"
 featuredpost: false
 hero_image: ../img/the-boys.jpg
