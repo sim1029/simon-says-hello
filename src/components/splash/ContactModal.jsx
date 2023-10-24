@@ -78,7 +78,7 @@ const ContactModal = () => {
 									id="firstName"
 									name="firstName"
 									required
-									className="w-9/10 h-12 rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red lg:border-4 2xl:w-1/2"
+									className="h-12 w-full rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red sm:w-3/4 lg:border-4 2xl:w-1/3"
 								/>
 								<br />
 							</div>
@@ -90,7 +90,7 @@ const ContactModal = () => {
 									id="lastName"
 									name="lastName"
 									required
-									className="w-9/10 h-12 rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red lg:border-4 2xl:w-1/2"
+									className="h-12 w-full rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red sm:w-3/4 lg:border-4 2xl:w-1/3"
 								/>
 								<br />
 							</div>
@@ -102,7 +102,7 @@ const ContactModal = () => {
 									id="email"
 									name="email"
 									required
-									className="w-9/10 h-12 rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red lg:border-4 2xl:w-1/2"
+									className="h-12 w-full rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red sm:w-3/4 lg:border-4 2xl:w-1/3"
 								/>
 								<br />
 							</div>
@@ -113,7 +113,7 @@ const ContactModal = () => {
 									id="message"
 									name="message"
 									required
-									className="w-9/10 h-32 rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red lg:border-4 2xl:w-1/2"
+									className="h-32 w-full rounded-xl border-2 border-slate-300 bg-slate-200 text-gray-800 caret-transparent focus:border-blue focus:outline-none focus:ring-blue dark:border-gray-700 dark:focus:border-red dark:focus:ring-red sm:w-3/4 lg:border-4 2xl:w-1/3"
 								/>
 								<br />
 							</div>
