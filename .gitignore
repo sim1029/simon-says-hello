@@ -14,3 +14,4 @@ yarn-error.log
 local_assets/
 # Local Netlify folder
 .netlify
+functions/
