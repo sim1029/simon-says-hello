@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: Pitt -> Delhi -> Mussoorie
-date: 2023-10-23T23:38:45.198Z
+date: 2023-05-04T00:42:13.847Z
 description: "Leadership in the Himalayas blog post #2"
 featuredpost: false
 hero_image: ../img/post2-thumb.webp
