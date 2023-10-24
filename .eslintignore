@@ -1,1 +1,5 @@
 gatsby*.js
+node_modules
+.netlify
+public
+functions
