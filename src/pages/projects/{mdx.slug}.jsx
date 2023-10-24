@@ -6,23 +6,20 @@ import * as React from "react";
 import Layout from "../../components/layout/Layout";
 import BackButton from "../../components/layout/BackButton";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { useColorMode } from "../../context/useColorMode";
-import githubDarkLogo from "../../images/social/github-icon-dark.svg";
-import githubLogo from "../../images/social/github-icon.svg";
-import liveLink from "../../images/svg/link.svg";
+import githubLogo from "../../images/github-dark.png";
+import demoLink from "../../images/link-light.png";
 
 const ProjectPage = ({ data }) => {
 	const image = getImage(data.mdx.frontmatter.logo);
-	const theme = useColorMode();
-	const githubIcon = theme === "dark" ? githubDarkLogo : githubLogo;
+
 	return (
 		<Layout>
-			<article className="prose prose-xl mb-12 self-center dark:prose-invert">
+			<article className="prose mx-4 mb-12 self-center dark:prose-invert">
 				<BackButton href={"/projects"} />
 				<div className="my-8 flex items-center justify-between">
 					{Boolean(image) && (
 						<GatsbyImage
-							className="hidden md:inline"
+							className="inline"
 							image={image}
 							alt={data.mdx.frontmatter.title}
 						/>
@@ -34,7 +31,11 @@ const ProjectPage = ({ data }) => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<img src={githubIcon} alt="github" className="w-14" />
+								<img
+									src={githubLogo}
+									alt="github"
+									className="w-14 dark:invert dark:filter"
+								/>
 							</a>
 						)}
 						{data.mdx.frontmatter.demo && (
@@ -43,7 +44,11 @@ const ProjectPage = ({ data }) => {
 								target="_blank"
 								rel="noreferrer"
 							>
-								<img src={liveLink} alt="Active Project" className="w-14" />
+								<img
+									src={demoLink}
+									alt="Active Project"
+									className="w-14 dark:invert dark:filter"
+								/>
 							</a>
 						)}
 					</div>

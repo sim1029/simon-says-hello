@@ -12,7 +12,6 @@ demo: https://pittcswiki.netlify.app/
 linkedOrgs:
   - Pitt Computer Science Club
   - University of Pittsburgh
-linkedSkills: []
 ---
 # Project Title
 

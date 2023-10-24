@@ -53,10 +53,8 @@ const FeaturedProjects = () => {
 
 	return (
 		<div className="flex flex-col space-y-8">
-			<h1 className="mx-2 self-center  text-4xl font-bold">
-				Featured Projects
-			</h1>
-			<div className="flex flex-1 flex-wrap justify-center">
+			<h1 className="mx-2 self-center text-4xl font-bold">Featured Projects</h1>
+			<div className="mx-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
 				{data.allMdx.nodes.slice(page * 4, page * 4 + 4).map((project) => {
 					return <ProjectPreview project={project} key={project.id} />;
 				})}
