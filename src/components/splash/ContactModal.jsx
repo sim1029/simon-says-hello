@@ -19,6 +19,7 @@ const ContactModal = () => {
 		const email = form.email.value;
 		const message = form.message.value;
 
+		// eslint-disable-next-line no-unused-vars
 		const data = {
 			firstName,
 			lastName,
@@ -26,11 +27,8 @@ const ContactModal = () => {
 			message,
 		};
 
-		fetch("https://3j2yibwlqk.execute-api.us-east-1.amazonaws.com/prod-ssh", {
+		fetch("/.netlify/functions/email", {
 			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
 			body: JSON.stringify(data),
 		})
 			.then((response) => {
