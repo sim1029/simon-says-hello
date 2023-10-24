@@ -1,6 +1,6 @@
 import React from "react";
 import { useColorMode } from "../../context/useColorMode";
-import logo from "../../images/logo.png";
+import logo from "../../images/icon.png";
 import githubLogoDark from "../../images/social/github-icon-dark.svg";
 import githubLogo from "../../images/social/github-icon.svg";
 import twitterDark from "../../images/social/twitter-dark.png";
