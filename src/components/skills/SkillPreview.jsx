@@ -1,13 +1,9 @@
 /* eslint-disable react/no-array-index-key */
 import PropTypes from "prop-types";
 import React from "react";
-import HalfStar from "../../images/star-half.inline.svg";
-import OutlineStar from "../../images/star-outline.inline.svg";
-import FilledStar from "../../images/star.inline.svg";
 
 const SkillPreview = ({ skill }) => {
 	const info = skill.frontmatter;
-	const halfStar = info.proficiency % 1 > 0;
 
 	const timeUsed = (startDate, endDate) => {
 		const years = endDate.getFullYear() - startDate.getFullYear();
@@ -34,17 +30,6 @@ const SkillPreview = ({ skill }) => {
 			)}
 
 			<h2 className="font-bold">{timeUsed(startDate, currDate)}</h2>
-
-			<div className="mx-2 flex space-x-2">
-				{[...Array(5)].map((undef, x) => {
-					if (x + 1 === Math.round(info.proficiency) && halfStar) {
-						return <HalfStar key={`${info.name}-${x}`} className="w-6" />;
-					}
-					if (x < info.proficiency)
-						return <FilledStar key={`${info.name}-${x}`} className="w-6" />;
-					return <OutlineStar key={`${info.name}-${x}`} className="w-6" />;
-				})}
-			</div>
 		</div>
 	);
 };

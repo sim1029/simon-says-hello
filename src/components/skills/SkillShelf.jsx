@@ -4,21 +4,12 @@ import React from "react";
 import SkillPreview from "./SkillPreview";
 
 const sortPosts = (data) => {
-	const ret = data.allMdx.edges.sort((edge1, edge2) => {
-		if (
-			edge1.node.frontmatter.proficiency &&
-			edge2.node.frontmatter.proficiency
-		) {
-			return (
-				edge2.node.frontmatter.proficiency - edge1.node.frontmatter.proficiency
-			);
-		} else if (edge1.node.frontmatter.proficiency) {
-			return edge1.node.frontmatter.proficiency;
-		} else {
-			return edge2.node.frontmatter.proficiency;
-		}
+	const sortedData = data.allMdx.edges.sort((a, b) => {
+		const dateA = new Date(a.node.frontmatter.yoe);
+		const dateB = new Date(b.node.frontmatter.yoe);
+		return dateA - dateB;
 	});
-	return ret;
+	return sortedData;
 };
 
 const SkillShelf = () => {

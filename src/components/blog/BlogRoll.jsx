@@ -6,6 +6,12 @@ import SpotlightBlog from "./SpotlightBlog";
 function BlogRoll() {
 	const data = useStaticQuery(graphql`
 		query BlogRollQuery {
+			allPageViews {
+				nodes {
+					path
+					totalCount
+				}
+			}
 			allMdx(filter: { frontmatter: { templateKey: { eq: "blog-post" } } }) {
 				nodes {
 					frontmatter {
@@ -35,14 +41,37 @@ function BlogRoll() {
 		}
 	`);
 
+	function formatViews(views) {
+		if (views >= 1000000) {
+			return `${(views / 1000000).toFixed(1)}M`;
+		} else if (views >= 1000) {
+			return `${(views / 1000).toFixed(1)}k`;
+		} else {
+			return `${views}`;
+		}
+	}
+
 	const posts = data.allMdx.nodes;
+	const blogViews = data.allPageViews.nodes.filter((node) =>
+		node.path.includes("/blog/"),
+	);
 	const sortedPosts = posts.sort((a, b) => {
 		const dateA = new Date(a.frontmatter.date);
 		const dateB = new Date(b.frontmatter.date);
-		return dateA - dateB;
+		return dateB - dateA;
 	});
 
-	const featuredPost = posts.filter(
+	const postsWithViews = sortedPosts.map((post) => {
+		const postViews = blogViews.filter(
+			(view) => view.path.slice("/blog/".length) === post.slug,
+		);
+		return {
+			...post,
+			views: postViews.length > 0 ? formatViews(postViews[0].totalCount) : 0,
+		};
+	});
+
+	const featuredPost = postsWithViews.filter(
 		(post) => post.frontmatter.featuredpost === true,
 	);
 
@@ -56,7 +85,7 @@ function BlogRoll() {
 					</div>
 					<div className="flex w-full flex-col space-y-8 sm:w-3/4">
 						<h1 className="self-center text-4xl font-bold">All Posts</h1>
-						<ScrollableBlogs posts={sortedPosts} />
+						<ScrollableBlogs posts={postsWithViews} />
 					</div>
 				</div>
 			)}

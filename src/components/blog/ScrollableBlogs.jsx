@@ -49,6 +49,7 @@ ScrollableBlogs.propTypes = {
 				body: PropTypes.string,
 				slug: PropTypes.string,
 			}),
+			views: PropTypes.number,
 		}),
 	).isRequired,
 };
