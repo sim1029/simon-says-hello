@@ -1,7 +1,7 @@
 // @ts-nocheck
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import PropTypes from "prop-types";
+
 import * as React from "react";
 import Layout from "../../components/layout/Layout";
 import BackButton from "../../components/layout/BackButton";
@@ -57,20 +57,6 @@ const ProjectPage = ({ data }) => {
 			</article>
 		</Layout>
 	);
-};
-
-ProjectPage.propTypes = {
-	data: PropTypes.shape({
-		mdx: PropTypes.shape({
-			frontmatter: PropTypes.shape({
-				title: PropTypes.string,
-				date: PropTypes.string,
-				repository: PropTypes.string,
-				demo: PropTypes.string,
-			}),
-			body: PropTypes.string,
-		}),
-	}).isRequired,
 };
 
 export const query = graphql`

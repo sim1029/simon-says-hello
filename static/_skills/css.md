@@ -3,7 +3,7 @@ templateKey: skill
 name: CSS
 logo: ../img/css-3.svg
 description: 
-yoe: 2022-08-21T15:52:36.450Z
+yoe: 2019-08-21T15:52:36.450Z
 proficiency: 3.5
 linkedProjects:
   - simon-says-hello

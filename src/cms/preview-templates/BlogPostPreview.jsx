@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { BlogPostTemplate } from "../../templates/blog-post";
 
 function BlogPostPreview({ entry, widgetFor }) {
@@ -13,12 +12,5 @@ function BlogPostPreview({ entry, widgetFor }) {
 		/>
 	);
 }
-
-BlogPostPreview.propTypes = {
-	entry: PropTypes.shape({
-		getIn: PropTypes.func,
-	}).isRequired,
-	widgetFor: PropTypes.func.isRequired,
-};
 
 export default BlogPostPreview;

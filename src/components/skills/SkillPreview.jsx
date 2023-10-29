@@ -1,5 +1,4 @@
 /* eslint-disable react/no-array-index-key */
-import PropTypes from "prop-types";
 import React from "react";
 
 const SkillPreview = ({ skill }) => {
@@ -32,23 +31,6 @@ const SkillPreview = ({ skill }) => {
 			<h2 className="font-bold">{timeUsed(startDate, currDate)}</h2>
 		</div>
 	);
-};
-
-SkillPreview.propTypes = {
-	skill: PropTypes.shape({
-		frontmatter: PropTypes.shape({
-			name: PropTypes.string,
-			logo: PropTypes.shape({
-				publicURL: PropTypes.string,
-			}),
-			description: PropTypes.string,
-			yoe: PropTypes.string,
-			proficiency: PropTypes.number,
-			linkedProjects: PropTypes.arrayOf(PropTypes.string),
-			linkedOrgs: PropTypes.arrayOf(PropTypes.string),
-			linkedSkills: PropTypes.arrayOf(PropTypes.string),
-		}),
-	}).isRequired,
 };
 
 export default SkillPreview;

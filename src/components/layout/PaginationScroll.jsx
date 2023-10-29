@@ -1,7 +1,7 @@
 import { TiArrowLeft } from "@react-icons/all-files/ti/TiArrowLeft";
 import { TiArrowRight } from "@react-icons/all-files/ti/TiArrowRight";
 import classNames from "classnames";
-import PropTypes from "prop-types";
+
 import React from "react";
 
 const PaginationScroll = ({
@@ -27,9 +27,10 @@ const PaginationScroll = ({
 						return (
 							<h1
 								className={classNames("hover:cursor-default", {
-									"rounded-md bg-blue py-1 px-3 text-white dark:bg-red":
+									"rounded-md bg-blue px-3 py-1 text-white dark:bg-red":
 										page === num,
 								})}
+								key={num}
 							>
 								{num + 1}
 							</h1>
@@ -45,13 +46,6 @@ const PaginationScroll = ({
 			</button>
 		</div>
 	);
-};
-
-PaginationScroll.propTypes = {
-	handleLeftClick: PropTypes.func.isRequired,
-	handleRightClick: PropTypes.func.isRequired,
-	length: PropTypes.number.isRequired,
-	page: PropTypes.number.isRequired,
 };
 
 export default PaginationScroll;

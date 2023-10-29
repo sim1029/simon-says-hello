@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { ColorModeProvider } from "../../context/useColorMode";
@@ -53,9 +52,5 @@ function TemplateWrapper({ children }) {
 		</ColorModeProvider>
 	);
 }
-
-TemplateWrapper.propTypes = {
-	children: PropTypes.node.isRequired,
-};
 
 export default TemplateWrapper;

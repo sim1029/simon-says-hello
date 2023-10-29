@@ -13,6 +13,9 @@ linkedSkills:
   - React.js
   - Github
   - Python
+  - FastAPI
+  - Netlify
+  - OpenAI
 ---
 # Hire Me Pls
 

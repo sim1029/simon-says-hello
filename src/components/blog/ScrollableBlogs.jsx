@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React, { useCallback } from "react";
 import PaginationScroll from "../layout/PaginationScroll";
 import BlogPreviewCard from "./BlogPreviewCard";
@@ -29,29 +28,6 @@ const ScrollableBlogs = ({ posts }) => {
 			/>
 		</div>
 	);
-};
-
-ScrollableBlogs.propTypes = {
-	posts: PropTypes.arrayOf(
-		PropTypes.shape({
-			post: PropTypes.shape({
-				frontmatter: PropTypes.shape({
-					title: PropTypes.string,
-					templateKey: PropTypes.string,
-					date: PropTypes.string,
-					featuredPost: PropTypes.bool,
-					description: PropTypes.string,
-					featuredimage: PropTypes.string,
-					tags: PropTypes.arrayOf(PropTypes.string),
-				}),
-				timeToRead: PropTypes.number,
-				id: PropTypes.string,
-				body: PropTypes.string,
-				slug: PropTypes.string,
-			}),
-			views: PropTypes.number,
-		}),
-	).isRequired,
 };
 
 export default ScrollableBlogs;
