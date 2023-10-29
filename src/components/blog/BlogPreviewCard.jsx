@@ -2,7 +2,6 @@
 /* eslint-disable react/no-array-index-key */
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
 import React from "react";
 import ViewEye from "../../images/views.png";
 import ViewEyeDark from "../../images/view-dark.png";
@@ -63,28 +62,5 @@ function BlogPreviewCard({ post }) {
 		</Link>
 	);
 }
-
-BlogPreviewCard.propTypes = {
-	post: PropTypes.shape({
-		frontmatter: PropTypes.shape({
-			title: PropTypes.string,
-			templateKey: PropTypes.string,
-			date: PropTypes.string,
-			featuredPost: PropTypes.bool,
-			description: PropTypes.string,
-			hero_image: PropTypes.shape({
-				childImageSharp: PropTypes.shape({
-					gatsbyImageData: PropTypes.string,
-				}),
-			}),
-			tags: PropTypes.arrayOf(PropTypes.string),
-		}),
-		timeToRead: PropTypes.number,
-		id: PropTypes.string,
-		body: PropTypes.string,
-		slug: PropTypes.string,
-		views: PropTypes.string,
-	}).isRequired,
-};
 
 export default BlogPreviewCard;

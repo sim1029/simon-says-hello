@@ -14,4 +14,5 @@ endDate: 2021-08-24T04:00:00.000Z
 role: Software Engineering Intern
 linkedSkills: 
  - SQL
+ - VBA
 ---

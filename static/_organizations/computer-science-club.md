@@ -15,4 +15,5 @@ linkedProjects: []
 linkedSkills:
   - Gatsby.js
   - Github
+  - Netlify
 ---

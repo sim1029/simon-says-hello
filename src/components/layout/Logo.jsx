@@ -1,5 +1,4 @@
 import { Link } from "gatsby";
-import { PropTypes } from "prop-types";
 import React from "react";
 import logo from "../../images/icon.png";
 
@@ -10,15 +9,6 @@ const Logo = ({ imgStyles, children }) => {
 			{children}
 		</Link>
 	);
-};
-
-Logo.propTypes = {
-	imgStyles: PropTypes.string.isRequired,
-	children: PropTypes.node,
-};
-
-Logo.defaultProps = {
-	children: null,
 };
 
 export default Logo;

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import React from "react";
 
 const PageHeader = ({ pageInfo }) => {
@@ -8,13 +7,6 @@ const PageHeader = ({ pageInfo }) => {
 			<p className="text-lg">{pageInfo.description}</p>
 		</div>
 	);
-};
-
-PageHeader.propTypes = {
-	pageInfo: PropTypes.shape({
-		title: PropTypes.string,
-		description: PropTypes.string,
-	}).isRequired,
 };
 
 export default PageHeader;

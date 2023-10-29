@@ -1,4 +1,3 @@
-import { PropTypes } from "prop-types";
 import React, { useState } from "react";
 import CrossButton from "./CrossButton";
 import Logo from "./Logo";
@@ -36,18 +35,18 @@ function Navbar({ themeToggle }) {
 					<div
 						className={
 							isNavOpen
-								? "fixed top-0 left-0 z-10 flex h-screen w-screen flex-col items-center justify-evenly overflow-hidden bg-slate-200 dark:bg-gray-800"
+								? "fixed left-0 top-0 z-10 flex h-screen w-screen flex-col items-center justify-evenly overflow-hidden bg-slate-200 dark:bg-gray-800"
 								: "hidden"
 						}
 					>
 						<button
-							className="absolute top-0 right-0 cursor-pointer px-8 py-8"
+							className="absolute right-0 top-0 cursor-pointer px-8 py-8"
 							onClick={() => setIsNavOpen(false)} // change isNavOpen state to false to close the menu
 							type="button"
 						>
 							<CrossButton />
 						</button>
-						<div className="absolute top-0 left-0 flex space-x-8 px-8 py-8">
+						<div className="absolute left-0 top-0 flex space-x-8 px-8 py-8">
 							<ToggleSlider onClick={themeToggle} />
 							<Logo imgStyles="w-10 h-10" />
 						</div>
@@ -66,9 +65,5 @@ function Navbar({ themeToggle }) {
 		</div>
 	);
 }
-
-Navbar.propTypes = {
-	themeToggle: PropTypes.func.isRequired,
-};
 
 export default Navbar;

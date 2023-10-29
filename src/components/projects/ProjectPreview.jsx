@@ -2,7 +2,6 @@
 /* eslint-disable react/no-array-index-key */
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import PropTypes from "prop-types";
 import React from "react";
 
 const ProjectPreview = ({ project }) => {
@@ -77,29 +76,6 @@ const ProjectPreview = ({ project }) => {
 			</div>
 		</Link>
 	);
-};
-
-ProjectPreview.propTypes = {
-	project: PropTypes.shape({
-		frontmatter: PropTypes.shape({
-			demo: PropTypes.string,
-			description: PropTypes.string,
-			startDate: PropTypes.string,
-			endDate: PropTypes.string,
-			logo: PropTypes.shape({
-				childImageSharp: PropTypes.shape({
-					gatsbyImageData: PropTypes.string,
-				}),
-			}),
-			repository: PropTypes.string,
-			title: PropTypes.string,
-			status: PropTypes.bool,
-			linkedSkills: PropTypes.arrayOf(PropTypes.string),
-			linkedOrgs: PropTypes.arrayOf(PropTypes.string),
-		}),
-		id: PropTypes.string,
-		slug: PropTypes.string,
-	}).isRequired,
 };
 
 export default ProjectPreview;
