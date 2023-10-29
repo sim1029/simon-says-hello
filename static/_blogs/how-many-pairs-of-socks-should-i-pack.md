@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 title: How many pairs of socks should I pack?
-date: 2023-08-29T00:39:18.730Z
+date: 2023-04-29T00:39:18.730Z
 description: "Leadership in the Himalayas post #1"
 featuredpost: true
 hero_image: ../img/profile-pic.jpg

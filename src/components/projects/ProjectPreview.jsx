@@ -36,20 +36,16 @@ const ProjectPreview = ({ project }) => {
 
 	return (
 		<Link to={`/projects/${project.slug}`} className="contents">
-			<div className="group mx-4 mb-8 flex h-[250px] max-w-[600px] flex-col justify-evenly rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:-translate-y-3 hover:translate-x-3 hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red sm:min-w-[500px] md:mx-8">
+			<div className="group flex w-full flex-col overflow-x-hidden overflow-ellipsis rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red">
 				<article className="contents">
-					<div className="flex space-x-4">
+					<div className="mb-2 mt-4 flex items-start space-x-4">
 						{Boolean(image) && (
-							<GatsbyImage
-								className="hidden md:inline"
-								image={image}
-								alt={info.title}
-							/>
+							<GatsbyImage className="inline" image={image} alt={info.title} />
 						)}
-						<h2 className="text-3xl font-bold">{info.title}</h2>
+						<h2 className="text-xl font-bold sm:text-3xl">{info.title}</h2>
 					</div>
 
-					<div className="flex justify-between">
+					<div className="flex justify-between text-xs sm:text-base">
 						<h2 className="">
 							{formatDate(start)}
 							{` - ${!end ? "Present" : formatDate(end)}`}
@@ -60,11 +56,12 @@ const ProjectPreview = ({ project }) => {
 								: timeWorked(start, new Date())}
 						</h2>
 					</div>
-					<p>{info.description.slice(0, 70)}</p>
-					<ul className="flex items-center space-x-4 text-sm">
+					<p className="mb-auto mt-4 sm:text-lg">
+						{info.description.slice(0, 70)}
+					</p>
+					<ul className="my-4 flex items-center space-x-4 text-xs sm:text-sm">
 						{Boolean(info.linkedSkills) && (
 							<>
-								<h2 className="text-lg font-bold">Skills: </h2>
 								{info.linkedSkills.map((skill, index) => (
 									<li
 										key={index}

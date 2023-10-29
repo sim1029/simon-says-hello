@@ -3,7 +3,7 @@ templateKey: blog-post
 title: The View from the Top is so Sweet
 date: 2023-05-27T03:20:00.202Z
 description: "Leadership in the Himalayas post #7"
-featuredpost: true
+featuredpost: false
 hero_image: ../img/mountains.webp
 hero_image_alt: Himalayan Mountains
 tags:

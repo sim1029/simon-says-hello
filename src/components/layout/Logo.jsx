@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import { PropTypes } from "prop-types";
 import React from "react";
-import logo from "../../images/logo.png";
+import logo from "../../images/icon.png";
 
 const Logo = ({ imgStyles, children }) => {
 	return (

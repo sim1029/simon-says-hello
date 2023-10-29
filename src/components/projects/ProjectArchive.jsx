@@ -54,7 +54,7 @@ const ProjectArchive = () => {
 	return (
 		<div className="flex flex-col space-y-8">
 			<h1 className="self-center text-4xl font-bold">Archived Projects</h1>
-			<div className="flex flex-1 flex-wrap justify-center">
+			<div className="mx-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
 				{data.allMdx.nodes.slice(page * 4, page * 4 + 4).map((project) => {
 					return <ProjectPreview project={project} key={project.id} />;
 				})}
