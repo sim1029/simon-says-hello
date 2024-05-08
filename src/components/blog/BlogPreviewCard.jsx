@@ -3,14 +3,9 @@
 import { Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
-import ViewEye from "../../images/views.png";
-import ViewEyeDark from "../../images/view-dark.png";
-import { useColorMode } from "../../context/useColorMode";
 
 function BlogPreviewCard({ post }) {
 	const image = getImage(post.frontmatter.hero_image);
-	const theme = useColorMode();
-	const viewIcon = theme === "dark" ? ViewEyeDark : ViewEye;
 	return (
 		<Link
 			to={`/blog/${post.slug}`}
@@ -33,10 +28,6 @@ function BlogPreviewCard({ post }) {
 								? `${post.frontmatter.title.slice(0, 30)}...`
 								: post.frontmatter.title}
 						</h1>
-						<div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400">
-							<img className="h-4 w-4 " src={viewIcon} alt="eye" />
-							<p>{post.views}</p>
-						</div>
 					</div>
 
 					<div className="flex justify-between text-sm text-gray-600 dark:text-slate-400">

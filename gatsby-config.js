@@ -94,22 +94,6 @@ module.exports = {
 				crossOrigin: `use-credentials`,
 			},
 		},
-		{
-			resolve: `gatsby-plugin-google-analytics-data-reporting-api`,
-			options: {
-				serviceAccountEmail: process.env.ANALYTICS_EMAIL,
-				privateKey: process.env.ANALYTICS_PRIVATE_KEY,
-				property: process.env.ANALYTICS_PROPERTY,
-				endDate: `today`,
-				desc: true,
-			},
-		},
-		{
-			resolve: `gatsby-plugin-google-gtag`,
-			options: {
-				trackingIds: [process.env.GA_ID],
-			},
-		},
 		`gatsby-plugin-image`,
 		"gatsby-plugin-sharp",
 		"gatsby-transformer-sharp",
