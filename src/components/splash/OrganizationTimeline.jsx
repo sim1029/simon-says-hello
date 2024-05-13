@@ -20,6 +20,7 @@ const OrganizationTimeline = () => {
 						name
 						startDate
 						role
+						currentOrg
 					}
 					id
 				}
@@ -42,7 +43,15 @@ const OrganizationTimeline = () => {
 
 	const timeWorked = (startDate, endDate) => {
 		const years = endDate.getFullYear() - startDate.getFullYear();
-		const months = Math.abs(endDate.getMonth() - startDate.getMonth() + 1);
+		let months = endDate.getMonth() - startDate.getMonth() + 1;
+
+		if (years === 0 && months < 0) {
+			return "Future Date";
+		}
+
+		if (years > 0 && months < 0) {
+			months = Math.abs(months);
+		}
 
 		let ret = "";
 		if (years === 1) ret += `${years} year`;
@@ -57,10 +66,22 @@ const OrganizationTimeline = () => {
 
 	// sort orgs by end date
 	orgs.sort((a, b) => {
-		if (a.frontmatter.endDate < b.frontmatter.endDate) {
+		const aEnd = a.frontmatter.endDate
+			? new Date(a.frontmatter.endDate)
+			: new Date();
+		const bEnd = b.frontmatter.endDate
+			? new Date(b.frontmatter.endDate)
+			: new Date();
+		if (aEnd < bEnd) {
 			return 1;
 		}
-		if (a.frontmatter.endDate > b.frontmatter.endDate) {
+		if (aEnd > bEnd) {
+			return -1;
+		}
+		if (a.frontmatter.startDate < b.frontmatter.startDate) {
+			return 1;
+		}
+		if (a.frontmatter.startDate > b.frontmatter.startDate) {
 			return -1;
 		}
 		return 0;
@@ -74,7 +95,9 @@ const OrganizationTimeline = () => {
 			<ul className="flex w-[90%] flex-col items-center space-y-16 lg:w-[70%] xl:w-[80%]">
 				{orgs.map((org) => {
 					const start = new Date(org.frontmatter.startDate);
-					const end = new Date(org.frontmatter.endDate);
+					const end = org.frontmatter.endDate
+						? new Date(org.frontmatter.endDate)
+						: new Date();
 					const info = org.frontmatter;
 					return (
 						<li
