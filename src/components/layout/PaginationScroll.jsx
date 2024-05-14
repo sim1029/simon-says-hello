@@ -10,7 +10,7 @@ const PaginationScroll = ({
 	length,
 	page,
 }) => {
-	const pageNums = Array.from(Array(Math.ceil((length - 1) / 4)).keys());
+	const pageNums = Array.from(Array(Math.ceil(length / 4)).keys());
 
 	return (
 		<div className="flex w-full items-center justify-center space-x-4">

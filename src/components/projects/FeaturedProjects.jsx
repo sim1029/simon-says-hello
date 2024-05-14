@@ -51,11 +51,17 @@ const FeaturedProjects = () => {
 
 	if (length === 0) return null;
 
+	const sortedProjects = data.allMdx.nodes.sort((a, b) => {
+		const dateA = new Date(a.frontmatter.startDate);
+		const dateB = new Date(b.frontmatter.startDate);
+		return dateB - dateA;
+	});
+
 	return (
 		<div className="flex flex-col space-y-8">
 			<h1 className="mx-2 self-center text-4xl font-bold">Featured Projects</h1>
 			<div className="mx-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
-				{data.allMdx.nodes.slice(page * 4, page * 4 + 4).map((project) => {
+				{sortedProjects.slice(page * 4, page * 4 + 4).map((project) => {
 					return <ProjectPreview project={project} key={project.id} />;
 				})}
 			</div>
