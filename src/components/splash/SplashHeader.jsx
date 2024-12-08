@@ -34,7 +34,7 @@ const SplashHeader = () => {
 			</p>
 			<div className="flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0">
 				<a
-					href="https://drive.google.com/file/d/1QyvJxG-3jTZskpW3MK7OBQTskt_9DkWf/view?usp=sharing"
+					href="https://drive.google.com/file/d/1VAUhwVSr3MlpuYf8F8U39d8ym7RqFAf5/view?usp=sharing"
 					type="button"
 					target="_blank"
 					className="w-24 border-[3px] border-solid border-gray-700 px-4 py-2 text-center font-bold no-underline hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
