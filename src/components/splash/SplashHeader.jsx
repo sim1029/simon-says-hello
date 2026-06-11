@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 
 const SplashHeader = () => {
@@ -34,10 +36,10 @@ const SplashHeader = () => {
 			</p>
 			<div className="flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0">
 				<a
-					href="https://drive.google.com/file/d/1VAUhwVSr3MlpuYf8F8U39d8ym7RqFAf5/view?usp=sharing"
+					href="https://drive.google.com/file/d/1CWSJ2vuU-GcmPM-BPF5PUl8iA66xlIx9/view?usp=sharing"
 					type="button"
 					target="_blank"
-					className="w-24 border-[3px] border-solid border-gray-700 px-4 py-2 text-center font-bold no-underline hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:bg-gray-900"
+					className="w-24 border-[3px] border-solid border-gray-700 px-4 py-2 text-center font-bold no-underline hover:border-gray-900 hover:bg-slate-300 dark:border-slate-200 dark:hover:border-slate-200 dark:hover:bg-gray-900"
 					rel="noreferrer"
 				>
 					CV
@@ -46,8 +48,7 @@ const SplashHeader = () => {
 					href="https://github.com/sim1029"
 					type="button"
 					target="_blank"
-					className="w-24 bg-blue px-4 py-2
-                     text-center font-bold text-slate-200 no-underline hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark"
+					className="inline-flex w-24 items-center justify-center bg-blue px-4 py-2 font-bold text-slate-200 no-underline hover:bg-blue-dark dark:bg-red dark:hover:bg-red-dark"
 					rel="noreferrer"
 				>
 					Github

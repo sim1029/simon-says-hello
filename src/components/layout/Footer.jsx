@@ -21,18 +21,18 @@ function Footer() {
 	const medium = theme === "dark" ? mediumDark : mediumLight;
 
 	const socialsLinks = [
-		{ alt: "GitHub", src: github, url: "https://github.com/sim1029" },
+		{ alt: "GitHub", src: github.src, url: "https://github.com/sim1029" },
 		{
 			alt: "Linkedin",
-			src: linkedin,
+			src: linkedin.src,
 			url: "https://www.linkedin.com/in/simonsayshello",
 		},
 		{
 			alt: "Twitter",
-			src: twitter,
+			src: twitter.src,
 			url: "https://twitter.com/_SimonSchueller",
 		},
-		{ alt: "Medium", src: medium, url: "https://medium.com/@1029simdog" },
+		{ alt: "Medium", src: medium.src, url: "https://medium.com/@1029simdog" },
 	];
 
 	const navPages = [
@@ -42,7 +42,7 @@ function Footer() {
 	];
 
 	const linksStyle =
-		"text-xl lg:text-lg decoration-blue decoration-2 underline-offset-4 hover:underline dark:decoration-red dark:text-slate-300 text-gray-600 text-center";
+		"text-xl lg:text-lg decoration-blue decoration-[6px] underline-offset-4 hover:underline dark:decoration-red dark:text-slate-300 text-gray-600 text-center";
 
 	return (
 		<footer className="flex w-full flex-col bg-slate-200 text-gray-800 duration-300 ease-linear dark:bg-gray-800 dark:text-slate-200">
@@ -71,7 +71,7 @@ function Footer() {
 
 			<div className="mb-8 hidden justify-around text-center lg:flex">
 				<a href="/" className="flex w-1/5 justify-center">
-					<img src={logo} alt="logo" className="h-20 w-20" />
+					<img src={logo.src} alt="logo" className="h-20 w-20" />
 				</a>
 				<ul className="w-1/5 space-y-4">
 					<li className="mb-2 text-3xl font-bold text-gray-900 dark:text-slate-100">

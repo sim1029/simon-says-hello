@@ -1,33 +1,6 @@
-import { graphql, useStaticQuery } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 
-const OrganizationTimeline = () => {
-	const data = useStaticQuery(graphql`
-		query OrganizationsQuery {
-			allMdx(filter: { frontmatter: { templateKey: { eq: "organization" } } }) {
-				nodes {
-					frontmatter {
-						description
-						logo {
-							childImageSharp {
-								gatsbyImageData(placeholder: BLURRED, layout: FIXED, width: 100)
-							}
-						}
-						endDate
-						linkedSkills
-						linkedProjects
-						name
-						startDate
-						role
-						currentOrg
-					}
-					id
-				}
-			}
-		}
-	`);
-
+const OrganizationTimeline = ({ orgs }) => {
 	// function to split string into list based on newline character and replace "+" character with 👉 emoji
 	const splitAndReplace = (str) => {
 		return str.split("\n").map((item) => item.replace("+ ", ""));
@@ -62,10 +35,8 @@ const OrganizationTimeline = () => {
 		return ret;
 	};
 
-	const orgs = data.allMdx.nodes;
-
 	// sort orgs by end date
-	orgs.sort((a, b) => {
+	const sortedOrgs = [...orgs].sort((a, b) => {
 		const aEnd = a.frontmatter.endDate
 			? new Date(a.frontmatter.endDate)
 			: new Date();
@@ -93,7 +64,7 @@ const OrganizationTimeline = () => {
 				Organizations Timeline
 			</h1>
 			<ul className="flex w-[90%] flex-col items-center space-y-16 lg:w-[70%] xl:w-[80%]">
-				{orgs.map((org) => {
+				{sortedOrgs.map((org) => {
 					const start = new Date(org.frontmatter.startDate);
 					const end = org.frontmatter.endDate
 						? new Date(org.frontmatter.endDate)
@@ -101,14 +72,14 @@ const OrganizationTimeline = () => {
 					const info = org.frontmatter;
 					return (
 						<li
-							key={org.id}
+							key={org.slug}
 							className="mx-2 flex w-full flex-col rounded-xl bg-slate-300 dark:bg-gray-700"
 						>
 							<div className="flex items-center space-x-4 rounded-t-xl bg-blue text-slate-200 dark:bg-red">
 								{info.logo && (
-									<GatsbyImage
-										className="flex-shrink-0 rounded-tl-xl"
-										image={getImage(info.logo)}
+									<img
+										className="w-[100px] flex-shrink-0 rounded-tl-xl"
+										src={info.logo}
 										alt={info.name}
 									/>
 								)}
@@ -128,7 +99,7 @@ const OrganizationTimeline = () => {
 								</div>
 							</div>
 							<div className="flex flex-col space-y-4 p-4">
-								<h2 className="text-2xl font-extrabold text-gray-600 underline decoration-blue decoration-2 underline-offset-4 dark:text-slate-300 dark:decoration-red">
+								<h2 className="text-2xl font-extrabold text-gray-600 underline decoration-blue decoration-[6px] underline-offset-4 dark:text-slate-300 dark:decoration-red">
 									{org.frontmatter.role}
 								</h2>
 								<div className="flex flex-col space-y-2">

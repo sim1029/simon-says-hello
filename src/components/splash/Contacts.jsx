@@ -1,5 +1,4 @@
 import React from "react";
-import ContactModal from "./ContactModal";
 
 const Contacts = () => {
 	return (
@@ -14,7 +13,12 @@ const Contacts = () => {
 				id="contacts"
 				className="flex flex-col space-y-4 sm:flex-row sm:space-x-8 sm:space-y-0"
 			>
-				<ContactModal />
+				<a
+					href="mailto:simon.paul.schueller@gmail.com"
+					className="w-32 border-[3px] border-blue bg-blue px-4 py-2 text-center font-bold text-slate-200 no-underline hover:border-blue-dark hover:bg-blue-dark dark:border-red dark:bg-red dark:hover:border-red-dark dark:hover:bg-red-dark"
+				>
+					Contact Me
+				</a>
 			</div>
 		</div>
 	);

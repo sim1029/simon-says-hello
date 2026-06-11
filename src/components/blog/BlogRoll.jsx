@@ -1,51 +1,15 @@
-import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import ScrollableBlogs from "./ScrollableBlogs";
 import SpotlightBlog from "./SpotlightBlog";
 
-function BlogRoll() {
-	const data = useStaticQuery(graphql`
-		query BlogRollQuery {
-			allMdx(filter: { frontmatter: { templateKey: { eq: "blog-post" } } }) {
-				nodes {
-					frontmatter {
-						title
-						description
-						date(formatString: "MMMM D, YYYY")
-						featuredpost
-						tags
-						templateKey
-						hero_image_alt
-						hero_image {
-							childImageSharp {
-								gatsbyImageData(
-									placeholder: BLURRED
-									layout: FIXED
-									height: 150
-								)
-							}
-						}
-					}
-					timeToRead
-					body
-					id
-					slug
-				}
-			}
-		}
-	`);
-
-	const posts = data.allMdx.nodes;
-
-	const sortedPosts = posts.sort((a, b) => {
-		const dateA = new Date(a.frontmatter.date);
-		const dateB = new Date(b.frontmatter.date);
-		return dateB - dateA;
-	});
-
-	const featuredPost = sortedPosts.filter(
+function BlogRoll({ posts }) {
+	// posts arrive sorted newest-first from lib/content
+	const featuredPost = posts.filter(
 		(post) => post.frontmatter.featuredpost === true,
 	);
+
+	// strip the markdown body before handing posts to the client component
+	const previews = posts.map(({ body, ...post }) => post);
 
 	return (
 		<div className="flex h-full w-full flex-col items-center justify-center gap-y-12">
@@ -57,7 +21,7 @@ function BlogRoll() {
 					</div>
 					<div className="flex w-full flex-col space-y-8 sm:w-3/4">
 						<h1 className="self-center text-4xl font-bold">All Posts</h1>
-						<ScrollableBlogs posts={sortedPosts} />
+						<ScrollableBlogs posts={previews} />
 					</div>
 				</div>
 			)}
