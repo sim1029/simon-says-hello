@@ -8,11 +8,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "npx serve out",
-		"lint": "prettier --check \"{src,netlify}/**/*.{js,jsx,mjs,css}\"",
-		"format": "prettier --write \"{src,netlify}/**/*.{js,jsx,mjs,css}\""
+		"lint": "prettier --check \"src/**/*.{js,jsx,mjs,css}\"",
+		"format": "prettier --write \"src/**/*.{js,jsx,mjs,css}\""
 	},
 	"dependencies": {
-		"@sendgrid/mail": "^8.1.4",
 		"classnames": "^2.5.1",
 		"gray-matter": "^4.0.3",
 		"next": "^15.3.3",
