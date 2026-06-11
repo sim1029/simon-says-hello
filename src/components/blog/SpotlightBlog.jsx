@@ -1,16 +1,16 @@
-import { Link } from "gatsby";
-import { MDXRenderer } from "gatsby-plugin-mdx";
+import Link from "next/link";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 
 function SpotlightBlog({ post }) {
 	return (
 		<Link
-			to={`/blog/${post.slug}`}
+			href={`/blog/${post.slug}`}
 			className="group mx-2 flex flex-col items-center gap-y-8 rounded-xl bg-slate-300 p-8 shadow-md hover:cursor-pointer dark:bg-gray-700"
 		>
 			<div className="flex max-h-96 max-w-prose skew-y-3 flex-col items-center bg-blue dark:bg-red lg:shrink-0">
 				<div className="prose prose-sm max-h-96 max-w-prose -translate-y-1 translate-x-1 overflow-hidden bg-white p-4 transition-transform duration-200 ease-out group-hover:-translate-y-3 group-hover:translate-x-3 lg:shrink-0">
-					<MDXRenderer>{post.body}</MDXRenderer>
+					<MDXRemote source={post.body} />
 				</div>
 			</div>
 			<div className="flex h-full flex-col">
@@ -20,7 +20,7 @@ function SpotlightBlog({ post }) {
 					{post.frontmatter.date}
 					<p>{post.timeToRead} Min</p>
 				</div>
-				<p className="mt-4 hidden self-end underline decoration-blue decoration-2 underline-offset-4 opacity-0 transition duration-500 ease-linear group-hover:opacity-100 dark:decoration-red md:inline">
+				<p className="mt-4 hidden self-end underline decoration-blue decoration-[6px] underline-offset-4 opacity-0 transition duration-500 ease-linear group-hover:opacity-100 dark:decoration-red md:inline">
 					Keep Reading <span>&rarr;</span>
 				</p>
 			</div>

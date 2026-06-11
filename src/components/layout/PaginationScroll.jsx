@@ -1,5 +1,6 @@
-import { TiArrowLeft } from "@react-icons/all-files/ti/TiArrowLeft";
-import { TiArrowRight } from "@react-icons/all-files/ti/TiArrowRight";
+"use client";
+
+import { TiArrowLeft, TiArrowRight } from "react-icons/ti";
 import classNames from "classnames";
 
 import React from "react";

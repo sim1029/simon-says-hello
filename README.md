@@ -1,26 +1,39 @@
 # Simon Says Hello
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b654c94e-08a6-4b79-b443-7837581b1d8d/deploy-status)](https://app.netlify.com/sites/gatsby-starter-netlify-cms-ci/deploys)
+Portfolio website and blog of Simon Schueller, built with Next.js and deployed on Netlify.
 
-## **Description**
+## Tech stack
 
-T﻿his website is mainly for myself since I have a horrible memory when it comes to all the progress I have made as a developer. However I encourage you to poke around my personal site to better understand what I am passionate about, where I got my experience from, and what skills I bring to the table.
+* Next.js 15 (App Router, fully static export)
+* React 19
+* Tailwind CSS 4 (+ typography plugin)
+* Markdown content in `content/` rendered with `next-mdx-remote`
+* [Simple Icons](https://simpleicons.org) for skill logos
+* Netlify Functions + SendGrid for the contact form
 
-## **Skills Utilized**
+## Development
 
-* G﻿atsby.js
-* R﻿eact.js
-* N﻿etlify
-* G﻿ithub
-* T﻿ailwindCSS
-* E﻿SLint
-* P﻿rettier
-* D﻿ecapCMS
+```sh
+npm install
+npm run dev        # site only, at http://localhost:3000
+npx netlify dev    # site + contact-form function
+```
 
-## **Contribution**
+`npm run build` produces the static site in `out/`.
 
-I﻿ developed this project from scratch to be a custom CMS for whatever I wanted the world to know about me.
+## Content
 
-## **Key Takeaways**
+Each collection is a folder of markdown files with frontmatter — no CMS, just edit the files:
 
-I﻿ would not choose Gatsby as a framework to build websites again (bad abstractions do exist). Stay focused on one task at a time. With this project I often picked it up and then left it off again before finally sitting down and completing it. Work invested up front is worth it in the long run.
+* `content/blogs/` — blog posts (`featuredpost: true` picks the spotlight post)
+* `content/projects/` — projects (`featuredProject: true` vs. archived)
+* `content/organizations/` — the timeline on the home page
+* `content/skills/` — the skill shelf; set `icon: <simple-icons slug>` to use a
+  [Simple Icons](https://simpleicons.org) logo in its brand color, or `logo: /img/...`
+  as an image fallback. Images live in `public/img/`.
+
+## Contact form
+
+`netlify/functions/email.mjs` sends submissions via SendGrid. It needs
+`SENDGRID_API_KEY`, `SENDGRID_TO_EMAIL`, and `SENDGRID_FROM_EMAIL` set in the
+Netlify environment.

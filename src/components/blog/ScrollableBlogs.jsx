@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback } from "react";
 import PaginationScroll from "../layout/PaginationScroll";
 import BlogPreviewCard from "./BlogPreviewCard";
@@ -7,7 +9,7 @@ const ScrollableBlogs = ({ posts }) => {
 
 	const handleRightClick = useCallback(() => {
 		if (page < posts.length / 4 - 1) setPage(page + 1);
-	}, [page, setPage]);
+	}, [page, setPage, posts.length]);
 
 	const handleLeftClick = useCallback(() => {
 		if (page > 0) setPage(page - 1);
@@ -17,7 +19,7 @@ const ScrollableBlogs = ({ posts }) => {
 		<div className="flex flex-col space-y-8">
 			<div className="mx-2 grid grid-cols-1 gap-4 sm:grid-cols-2">
 				{posts.slice(page * 4, page * 4 + 4).map((post) => {
-					return <BlogPreviewCard post={post} key={post.id} />;
+					return <BlogPreviewCard post={post} key={post.slug} />;
 				})}
 			</div>
 			<PaginationScroll

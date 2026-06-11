@@ -1,5 +1,5 @@
-/* eslint-disable react/no-array-index-key */
 import React from "react";
+import SimpleIcon, { getSimpleIcon } from "./SimpleIcon";
 
 const SkillPreview = ({ skill }) => {
 	const info = skill.frontmatter;
@@ -24,8 +24,12 @@ const SkillPreview = ({ skill }) => {
 		<div className="relative mx-4 mb-8 flex w-full flex-col items-center justify-evenly rounded-xl bg-slate-300 p-8 dark:bg-gray-700 md:ml-0 md:mr-8 md:w-64 md:space-y-6">
 			<h1 className="text-2xl font-bold">{info.name}</h1>
 
-			{info.logo && (
-				<img src={info.logo.publicURL} alt={info.name} className="w-[100px]" />
+			{getSimpleIcon(info.icon) ? (
+				<SimpleIcon slug={info.icon} className="w-[100px]" />
+			) : (
+				info.logo && (
+					<img src={info.logo} alt={info.name} className="w-[100px]" />
+				)
 			)}
 
 			<h2 className="font-bold">{timeUsed(startDate, currDate)}</h2>

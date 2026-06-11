@@ -11,7 +11,7 @@ const navPages = [
 ];
 
 const navPagesStyle =
-	"text-3xl decoration-blue decoration-2 underline-offset-4 hover:underline dark:decoration-red lg:text-xl";
+	"text-3xl decoration-blue decoration-[6px] underline-offset-4 hover:underline dark:decoration-red lg:text-xl";
 
 function Navbar({ themeToggle }) {
 	const [isNavOpen, setIsNavOpen] = useState(false);

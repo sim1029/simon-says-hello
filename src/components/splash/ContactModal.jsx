@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 
 const ContactModal = () => {
@@ -19,7 +21,6 @@ const ContactModal = () => {
 		const email = form.email.value;
 		const message = form.message.value;
 
-		// eslint-disable-next-line no-unused-vars
 		const data = {
 			firstName,
 			lastName,
@@ -31,19 +32,12 @@ const ContactModal = () => {
 			method: "POST",
 			body: JSON.stringify(data),
 		})
-			.then((response) => {
-				// Handle response
-				// eslint-disable-next-line no-console
-				console.log(response);
-				// console.log("Form submitted successfully!");
-				// Add your own code here to handle the response as needed
+			.then(() => {
 				closeModal();
 			})
 			.catch((error) => {
-				// Handle error
 				// eslint-disable-next-line no-console
 				console.error("Error:", error);
-				// Add your own code here to handle errors as needed
 			});
 	};
 

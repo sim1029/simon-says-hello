@@ -1,12 +1,11 @@
-// @ts-nocheck
+"use client";
+
 /* eslint-disable react/no-array-index-key */
-import { Link } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import Link from "next/link";
 import React from "react";
 
 const ProjectPreview = ({ project }) => {
 	const info = project.frontmatter;
-	const image = getImage(info.logo);
 	const padTo2Digits = (num) => {
 		return num.toString().padStart(2, "0");
 	};
@@ -34,12 +33,16 @@ const ProjectPreview = ({ project }) => {
 		info.endDate && info.endDate !== "" ? new Date(info.endDate) : null;
 
 	return (
-		<Link to={`/projects/${project.slug}`} className="contents">
+		<Link href={`/projects/${project.slug}`} className="contents">
 			<div className="group flex w-full flex-col overflow-x-hidden overflow-ellipsis rounded-xl border-4 border-slate-300 bg-slate-300 px-4 shadow-md transition-transform duration-200 ease-out hover:border-blue dark:border-gray-700 dark:bg-gray-700 dark:hover:border-red">
 				<article className="contents">
 					<div className="mb-2 mt-4 flex items-start space-x-4">
-						{Boolean(image) && (
-							<GatsbyImage className="inline" image={image} alt={info.title} />
+						{Boolean(info.logo) && (
+							<img
+								className="inline w-[40px]"
+								src={info.logo}
+								alt={info.title}
+							/>
 						)}
 						<h2 className="text-xl font-bold sm:text-3xl">{info.title}</h2>
 					</div>

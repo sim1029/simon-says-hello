@@ -1,9 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--color-red: #e94560;
+	--color-red-dark: #d93550;
+	--color-blue: #3282b8;
+	--color-blue-dark: #2070a6;
+}
 
 @layer base {
-  html {
-    font-family: 'Trebuchet MS', sans-serif;
-  }
+	html {
+		font-family: "Trebuchet MS", sans-serif;
+	}
+
+	/* Tailwind v4 preflight made buttons cursor: default; restore v3 behavior */
+	button:not(:disabled),
+	[role="button"]:not(:disabled) {
+		cursor: pointer;
+	}
+}
+
+/* v3 typography config overrode prose-sm font size for the spotlight preview */
+.prose-sm {
+	font-size: 0.45rem;
 }
